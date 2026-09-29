@@ -1,2 +1,5 @@
+# ignore noctalia theme files
 noctalia.*
+
+# ignore history files
 *history*
