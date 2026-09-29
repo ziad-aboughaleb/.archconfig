@@ -15,3 +15,6 @@ hl.window_rule({ match = { title = "^(Authentication Required)(.*)$" }, float = 
 
 -- Media Popups
 hl.window_rule({ match = { title = "^(Picture-in-Picture)$" }, float = true })
+
+-- Password Managers & Security
+hl.window_rule({ match = { title = "^(Bitwarden)(.*)$" }, float = true })
