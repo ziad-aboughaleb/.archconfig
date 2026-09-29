@@ -10,7 +10,10 @@ hl.config({
 		border_size = 2,
 		gaps_in = 6,
 		gaps_out = 12,
-		layout = "scrolling",
+		layout = "dwindle",
+	},
+	dwindle = {
+		preserve_split = true,
 	},
 	decoration = {
 		rounding = 2,

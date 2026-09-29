@@ -1,0 +1,44 @@
+[
+  {
+    "bindings": {
+      "ctrl-alt-w": "workspace::CloseProject"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-d": [
+        "editor::SelectNext",
+        {
+          "replace_newest": false
+        }
+      ],
+      "alt-shift-f": "editor::Format",
+      "ctrl-alt-shift-down": null,
+      "ctrl-d": "editor::DuplicateLineDown",
+      "ctrl-shift-d": "editor::DuplicateLineUp",
+      "ctrl-shift-i": null
+    }
+  },
+  {
+    "context": "(Editor && mode == full)",
+    "bindings": {
+      "ctrl-enter": "editor::NewlineBelow",
+      "ctrl-shift-enter": "editor::NewlineAbove"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-c": "terminal::Copy",
+      "ctrl-v": "terminal::Paste"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-alt-b": "workspace::ToggleLeftDock",
+      "ctrl-b": "workspace::ToggleRightDock"
+    }
+  }
+]

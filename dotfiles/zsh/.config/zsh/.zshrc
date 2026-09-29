@@ -11,9 +11,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Init
-if [ "$TERM" = "linux" ]; then
-    printf '\e]P01e1e2e\e]P1f38ba8\e]P2a6e3a1\e]P3f9e2af\e]P489bceb\e]P5cba6f7\e]P694e2d5\e]P7cdd6f4\e]P86c7086\e]P9fab387\e]PA313244\e]PB45475a\e]PC585b70\e]PDf5e2e6\e]PEf2cdcd\e]PFb4befe'
-fi
 fastfetch
 
 # Functions
@@ -22,7 +19,7 @@ stowify() {
     shift
 
     local dotfiles_dir="${DOTFILES_DIR:-$PWD}"
-    
+
     if [[ -z "$app_name" || -z "$1" ]]; then
         echo "Usage: stowify <app-name> <path-to-config1> [<path-to-config2> ...]"
         return 1
@@ -31,7 +28,7 @@ stowify() {
     for item in "$@"; do
         local abs_path
         abs_path=$(realpath "$item")
-        
+
         if [[ "$abs_path" != "$HOME"* ]]; then
             echo "⚠️ Skipping $item: not in $HOME"
             continue
@@ -52,19 +49,19 @@ stowify() {
 stow() {
     local dotfiles_dir="${DOTFILES_DIR:-$PWD}"
 
-    if ! command -v stow >/dev/null; then 
+    if ! command -v stow >/dev/null; then
         echo "Error: 'stow' is not installed." >&2
         return 1
     fi
 
-    if [[ "$1" == "*" ]]; then
+    if [[ "$1" == "all" ]]; then
         for d in "$dotfiles_dir"/*(N/); do
-            command stow --dir="$dotfiles_dir" --target="$HOME" "${d:t}"
+            command stow --no-folding --dir="$dotfiles_dir" --target="$HOME" "${d:t}"
         done
         return
     fi
-    
-    command stow --dir="$dotfiles_dir" --target="$HOME" "$@"
+
+    command stow --no-folding --dir="$dotfiles_dir" --target="$HOME" "$@"
 }
 
 fmt() {

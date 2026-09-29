@@ -27,22 +27,19 @@ hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))
 hl.bind("SUPER + right", hl.dsp.focus({ direction = "right" }))
 hl.bind("SUPER + up", hl.dsp.focus({ direction = "up" }))
 hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }))
-hl.bind("SUPER + mouse_down", hl.dsp.focus({ direction = "left" }))
-hl.bind("SUPER + mouse_up", hl.dsp.focus({ direction = "right" }))
 
 -- Window Swapping
-hl.bind("SUPER + SHIFT + left", hl.dsp.window.swap({ direction = "left" }))
-hl.bind("SUPER + SHIFT + right", hl.dsp.window.swap({ direction = "right" }))
-hl.bind("SUPER + SHIFT + up", hl.dsp.window.swap({ direction = "up" }))
-hl.bind("SUPER + SHIFT + down", hl.dsp.window.swap({ direction = "down" }))
-hl.bind("SUPER + SHIFT + mouse_down", hl.dsp.window.swap({ direction = "left" }))
-hl.bind("SUPER + SHIFT + mouse_up", hl.dsp.window.swap({ direction = "right" }))
+hl.bind("SUPER + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
+hl.bind("SUPER + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
+hl.bind("SUPER + SHIFT + up", hl.dsp.window.move({ direction = "up" }))
+hl.bind("SUPER + SHIFT + down", hl.dsp.window.move({ direction = "down" }))
 
 -- Window Layout/Columns Sizing
 hl.bind("SUPER + equal", hl.dsp.layout("colresize +conf"))
 hl.bind("SUPER + minus", hl.dsp.layout("colresize -conf"))
-hl.bind("SUPER + F", hl.dsp.layout("colresize 1"))
-hl.bind("SUPER + D", hl.dsp.layout("colresize +conf"))
+hl.bind("SUPER + S", hl.dsp.layout("togglesplit"))
+-- hl.bind("SUPER + F", hl.dsp.layout("colresize 1"))
+-- hl.bind("SUPER + D", hl.dsp.layout("colresize +conf"))
 
 -- Workspace Jumps
 hl.bind("SUPER + 1", hl.dsp.focus({ workspace = "1" }))

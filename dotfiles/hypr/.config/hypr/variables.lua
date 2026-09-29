@@ -16,16 +16,16 @@ vars = {
 
 	-- Audio
 	volumeUp = "noctalia msg volume-up",
-    volumeDown = "noctalia msg volume-down",
-    volumeMute = "noctalia msg volume-mute",
-    micMute = "noctalia msg mic-mute",
+	volumeDown = "noctalia msg volume-down",
+	volumeMute = "noctalia msg volume-mute",
+	micMute = "noctalia msg mic-mute",
 
 	-- Brightness
 	brightnessUp = "noctalia msg brightness-up",
-    brightnessDown = "noctalia msg brightness-down",
+	brightnessDown = "noctalia msg brightness-down",
 
-    -- Media Controls
+	-- Media Controls
 	mediaNext = "noctalia msg media next",
-    mediaToggle = "noctalia msg media toggle",
-    mediaPrev = "noctalia msg media previous",
+	mediaToggle = "noctalia msg media toggle",
+	mediaPrev = "noctalia msg media previous",
 }
