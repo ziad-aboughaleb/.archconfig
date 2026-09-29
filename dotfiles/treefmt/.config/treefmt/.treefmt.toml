@@ -1,0 +1,52 @@
+[global]
+on_unmatched = "ignore"
+indent_type = "spaces"
+indent_size = 2
+excludes = [
+  "*.patch",
+  "*.lock",
+  ".env*",
+  "result/*",
+  "**/node_modules/**",
+  "**/oh-my-zsh/**",
+  ".github/*",
+  ".local/*",
+  ".cache/*",
+  ".rustup/*",
+  ".cargo/*",
+]
+
+[formatter.shfmt]
+command = "shfmt"
+options = ["-i", "2", "-w"]
+includes = ["*.sh"]
+
+[formatter.stylua]
+command = "stylua"
+includes = ["*.lua"]
+
+[formatter.taplo]
+command = "taplo"
+options = ["fmt"]
+includes = ["*.toml"]
+
+[formatter.prettier]
+command = "prettier"
+options = [
+  "--write",
+  "--config",
+  "/home/ziad/.config/treefmt/prettier/.prettierrc.json",
+]
+includes = [
+  "*.js",
+  "*.jsx",
+  "*.ts",
+  "*.tsx",
+  "*.css",
+  "*.scss",
+  "*.html",
+  "*.json",
+  "*.yaml",
+  "*.yml",
+  "*.md",
+]

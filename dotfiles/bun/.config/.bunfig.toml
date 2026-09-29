@@ -1,0 +1,9 @@
+telemetry = false
+
+[install]
+linker = "isolated"
+optional = true
+exact = true
+
+[run]
+bun = true

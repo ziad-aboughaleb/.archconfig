@@ -1,0 +1,31 @@
+# Path to Oh My Zsh installation
+export ZSH="$HOME/.oh-my-zsh"
+
+# Theme
+ZSH_THEME="robbyrussell"
+
+# Plugins (Nix handled these automatically, here we load them via OMZ)
+plugins=(
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    zsh-history-substring-search
+)
+
+# Load Oh My Zsh
+source $ZSH/oh-my-zsh.sh
+
+# Enable Completions (Oh My Zsh does this by default, but to be explicit)
+autoload -Uz compinit
+compinit
+
+# Aliases
+alias nix-rebuild="sudo nixos-rebuild switch --flake ~/nixos-config#default"
+alias nix-update="nix flake update --flake ~/nixos-config && sudo nixos-rebuild switch --flake ~/nixos-config#default"
+alias nix-gc="sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +10 && nix-collect-garbage"
+alias nix-repair-store="sudo nix store verify --repair --all"
+alias nix-search="nix-search"
+
+# Init Content
+fastfetch
+eval "$(direnv hook zsh)"
