@@ -1,6 +1,7 @@
 # 20-system.sh - Core System Configuration
 
 # System Identity & Locale
+CopyFile /etc/shells
 CopyFile /etc/hostname
 CopyFile /etc/locale.conf
 CreateLink /etc/localtime /usr/share/zoneinfo/Africa/Cairo

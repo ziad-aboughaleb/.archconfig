@@ -1,52 +1,52 @@
 # 00-ignore.sh - Ignore Rules for aconfmgr
 
-# General Runtime, Logs & Caches
+# System Core & Mounts
+IgnorePath '/boot*'
+IgnorePath '/boot/*'
+IgnorePath '/var/*'
+IgnorePath '/tmp/*'
+IgnorePath '/etc/os-release'
+IgnorePath '/etc/resolv.conf'
+IgnorePath '/etc/.updated'
+IgnorePath '*/.snapshots*'
+
+# Runtime, Logs & Caches
 IgnorePath '*.log'
 IgnorePath '*/log/*'
 IgnorePath '*cache*'
 IgnorePath '*history*'
-IgnorePath '/boot/*'
-IgnorePath '/var/*'
-IgnorePath '/tmp/*'
-IgnorePath '*/.snapshots*'
-IgnorePath '/etc/.updated'
 
-# Package Manager Backups & Temp Files
+# Package Manager & Backup Artifacts
 IgnorePath '*.pacnew'
 IgnorePath '*.pacsave'
 IgnorePath '*.bak'
 IgnorePath '*.old'
-
-# Dynamic System Configs & Mirrors
-# Files that change frequently or are dynamically managed by the system/packages
-IgnorePath '/etc/locale.gen'
 IgnorePath '/etc/pacman.d/mirrorlist'
+IgnorePath '/etc/pacman.d/gnupg/*'
+
+# Dynamic System & Hardware Configs
+IgnorePath '/etc/locale.gen'
 IgnorePath '/etc/conf.d/snapper'
 IgnorePath '/etc/vconsole.conf'
 
-# Auto-generated System Databases
+# Auto-Generated Databases & Caches
 IgnorePath '/usr/share/mime/*'
 IgnorePath '/usr/share/icons/*'
 IgnorePath '/usr/share/glib-2.0/schemas/gschemas.compiled'
 IgnorePath '/usr/share/info/dir'
-
-# Kernels, Modules & Binaries
 IgnorePath '/usr/lib/modules/*'
 IgnorePath '/usr/lib/locale/locale-archive'
 IgnorePath '/usr/lib/udev/hwdb.bin'
 
-# Security, Certificates & Keyrings
+# Security, Certificates & Credentials
 IgnorePath '/etc/ca-certificates/extracted/*'
 IgnorePath '/etc/ssl/certs/*'
-IgnorePath '/etc/pacman.d/gnupg/*'
-
-# Font Configs & Symlinks
-IgnorePath '/etc/fonts/conf.d/*'
-
-# User & Authentication Files
 IgnorePath '/etc/passwd*'
 IgnorePath '/etc/shadow*'
 IgnorePath '/etc/group*'
 IgnorePath '/etc/gshadow*'
 IgnorePath '/etc/.pwd.lock'
 IgnorePath '/etc/machine-id'
+
+# Font & Asset Symlinks
+IgnorePath '/etc/fonts/conf.d/*'

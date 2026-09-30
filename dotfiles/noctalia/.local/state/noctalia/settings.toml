@@ -72,6 +72,27 @@ widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-000000000000
         reversed = false
         show_when_idle = true
 
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
+[location]
+auto_locate = true
+
 [lockscreen]
 blurred_desktop = true
 edge_smoothness = 0.0
@@ -117,6 +138,7 @@ widget_order = [ "lockscreen-login-box@eDP-1" ]
 corner_radius_scale = 0.5000000074505806
 password_style = "random"
 polkit_agent = true
+screen_time_enabled = true
 time_format = "{:%-I:%M %p}"
 
     [shell.greeter_sync]
