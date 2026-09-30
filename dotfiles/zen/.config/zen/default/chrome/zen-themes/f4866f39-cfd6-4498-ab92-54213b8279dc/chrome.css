@@ -13,7 +13,12 @@
 }
 
 .toolbarbutton-1 {
-  &:hover > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack) {
+  &:hover
+    > :is(
+      .toolbarbutton-icon,
+      .toolbarbutton-text,
+      .toolbarbutton-badge-stack
+    ) {
     transition:
       background-color 0.3s ease-in-out,
       outline-color 0.3s ease-in-out; /* Smooth transition */
@@ -74,7 +79,12 @@
 
 /* For toolbarbutton-1 */
 .toolbarbutton-1 {
-  &:hover > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack) {
+  &:hover
+    > :is(
+      .toolbarbutton-icon,
+      .toolbarbutton-text,
+      .toolbarbutton-badge-stack
+    ) {
     transition:
       background-color 0.3s ease-in-out,
       outline-color 0.3s ease-in-out; /* Smooth transition */

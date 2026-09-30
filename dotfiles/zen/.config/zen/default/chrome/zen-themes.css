@@ -19,9 +19,11 @@
 }
 
 /* Custom background */
-@media (-moz-bool-pref: 'theme-better_find_bar-enable_custom_background') {
+@media (-moz-bool-pref: "theme-better_find_bar-enable_custom_background") {
   :root {
-    --better-findbar-background-color: var(--theme-better_find_bar-custom_background);
+    --better-findbar-background-color: var(
+      --theme-better_find_bar-custom_background
+    );
   }
 }
 
@@ -41,7 +43,8 @@ findbar {
   bottom: var(--better-findbar-position-bottom);
   left: var(--better-findbar-position-left);
   right: var(--better-findbar-position-right);
-  transform: translateX(var(--better-findbar-transform-translateX)) translateY(0);
+  transform: translateX(var(--better-findbar-transform-translateX))
+    translateY(0);
 
   overflow: unset !important;
   box-shadow: var(--box-shadow-10);
@@ -82,7 +85,7 @@ findbar {
 }
 
 /* Disable animations */
-@media (-moz-bool-pref: 'theme.better_find_bar.instant_animations') {
+@media (-moz-bool-pref: "theme.better_find_bar.instant_animations") {
   findbar,
   findbar .findbar-container {
     transition: initial !important;
@@ -90,29 +93,35 @@ findbar {
 }
 
 /* Horizontal Position */
-body:has(#theme-Better-Find-Bar[theme-better_find_bar-horizontal_position='left']) {
+body:has(
+  #theme-Better-Find-Bar[theme-better_find_bar-horizontal_position="left"]
+) {
   --better-findbar-transform-translateX: 0%;
   --better-findbar-position-left: 15px;
   --better-findbar-position-right: auto;
 }
 
-body:has(#theme-Better-Find-Bar[theme-better_find_bar-horizontal_position='right']) {
+body:has(
+  #theme-Better-Find-Bar[theme-better_find_bar-horizontal_position="right"]
+) {
   --better-findbar-transform-translateX: 0%;
   --better-findbar-position-left: auto;
   --better-findbar-position-right: 15px;
 }
 
 /* Vertical Position */
-body:has(#theme-Better-Find-Bar[theme-better_find_bar-vertical_position='top']) {
+body:has(
+  #theme-Better-Find-Bar[theme-better_find_bar-vertical_position="top"]
+) {
   --better-findbar-transform-translateY: -150px;
   --better-findbar-position-bottom: auto;
   --better-findbar-position-top: 15px;
 }
 
 /* Background blur */
-@media (-moz-bool-pref: 'theme.better_find_bar.transparent_background') {
+@media (-moz-bool-pref: "theme.better_find_bar.transparent_background") {
   findbar,
-  findbar .findbar-textbox:not([status='notfound']) {
+  findbar .findbar-textbox:not([status="notfound"]) {
     backdrop-filter: blur(8px);
 
     background: color-mix(
@@ -124,66 +133,82 @@ body:has(#theme-Better-Find-Bar[theme-better_find_bar-vertical_position='top']) 
 }
 
 /* Hide highlight checkbox */
-body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_highlight='hide_immediately']) {
+body:has(
+  #theme-Better-Find-Bar[theme-better_find_bar-hide_highlight="hide_immediately"]
+) {
   findbar .findbar-highlight {
     display: none !important;
   }
 }
 
-body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_highlight='hide_on_disable']) {
+body:has(
+  #theme-Better-Find-Bar[theme-better_find_bar-hide_highlight="hide_on_disable"]
+) {
   findbar checkbox.findbar-highlight:not([checked]) {
     display: none !important;
   }
 }
 
 /* Hide match case checkbox */
-body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_match_case='hide_immediately']) {
+body:has(
+  #theme-Better-Find-Bar[theme-better_find_bar-hide_match_case="hide_immediately"]
+) {
   findbar .findbar-case-sensitive {
     display: none !important;
   }
 }
 
-body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_match_case='hide_on_disable']) {
+body:has(
+  #theme-Better-Find-Bar[theme-better_find_bar-hide_match_case="hide_on_disable"]
+) {
   findbar checkbox.findbar-case-sensitive:not([checked]) {
     display: none !important;
   }
 }
 
 /* Hide match diacritics checkbox */
-body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_match_diacritics='hide_immediately']) {
+body:has(
+  #theme-Better-Find-Bar[theme-better_find_bar-hide_match_diacritics="hide_immediately"]
+) {
   findbar .findbar-match-diacritics {
     display: none !important;
   }
 }
 
-body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_match_diacritics='hide_on_disable']) {
+body:has(
+  #theme-Better-Find-Bar[theme-better_find_bar-hide_match_diacritics="hide_on_disable"]
+) {
   findbar checkbox.findbar-match-diacritics:not([checked]) {
     display: none !important;
   }
 }
 
 /* Hide whole words checkbox */
-body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words='hide_immediately']) {
+body:has(
+  #theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words="hide_immediately"]
+) {
   findbar .findbar-entire-word {
     display: none !important;
   }
 }
 
-body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words='hide_on_disable']) {
+body:has(
+  #theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words="hide_on_disable"]
+) {
   findbar .findbar-entire-word:not([checked]) {
     display: none !important;
   }
 }
 
 /* Hide find status label */
-@media (-moz-bool-pref: 'theme.better_find_bar.hide_find_status') {
+@media (-moz-bool-pref: "theme.better_find_bar.hide_find_status") {
   findbar .findbar-find-status {
     display: none !important;
   }
 }
 
 /* Hide found matches label */
-@media (-moz-bool-pref: 'theme.better_find_bar.hide_found_matches') {
+@media (-moz-bool-pref: "theme.better_find_bar.hide_found_matches") {
   findbar .findbar-label.found-matches {
     display: none !important;
   }
@@ -192,7 +217,7 @@ body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words='hide_on_
 /* Name: Better Unloaded Tabs */
 /* Description: Makes unloaded tabs easier to notice by making them greyscale and transparent. */
 /* Author: @Felkazz */
-.tabbrowser-tab[pending='true'] {
+.tabbrowser-tab[pending="true"] {
   filter: grayscale(1);
   opacity: 0.5;
 }
@@ -272,7 +297,8 @@ body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words='hide_on_
     --panel-shadow-margin: var(--psu-better_ctrltab-shadow_size)
       calc(
         /* decrease by default non-css space */ var(--psu-default_spacing) +
-          (90% - var(--psu-default_spacing)) / 2 * (1 - var(--psu-better_ctrltab-zoom)) -
+          (90% - var(--psu-default_spacing)) / 2 *
+          (1 - var(--psu-better_ctrltab-zoom)) -
           (
             /* increase by tile padding and borders */
               (
@@ -282,7 +308,8 @@ body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words='hide_on_
                   ) *
                   var(--psu-tile-counter)
               ) /
-              2 /* increase by panel padding */ + (var(--psu-better_ctrltab-padding) * 0.8)
+              2 /* increase by panel padding */ +
+              (var(--psu-better_ctrltab-padding) * 0.8)
           ) *
           var(--psu-better_ctrltab-zoom)
       ) !important;
@@ -290,7 +317,8 @@ body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words='hide_on_
     #ctrlTab-previews {
       /* panel zoom and padding*/
       zoom: var(--psu-better_ctrltab-zoom) !important;
-      padding: var(--psu-better_ctrltab-padding) calc(var(--psu-better_ctrltab-padding) * 0.8) !important;
+      padding: var(--psu-better_ctrltab-padding)
+        calc(var(--psu-better_ctrltab-padding) * 0.8) !important;
 
       .ctrlTab-preview {
         margin: 0 !important;
@@ -305,9 +333,12 @@ body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words='hide_on_
               var(--psu-better_ctrltab-preview_border_width)
           ) !important;
           border-radius: calc(var(--psu-roundness-zoomed) * 0.8) !important;
-          padding-bottom: calc(var(--psu-better_ctrltab-preview_padding) / 2) !important;
+          padding-bottom: calc(
+            var(--psu-better_ctrltab-preview_padding) / 2
+          ) !important;
           border: none !important;
-          text-shadow: 0.5px 0.5px 0px light-dark(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+          text-shadow: 0.5px 0.5px 0px
+            light-dark(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
         }
         .ctrlTab-canvas {
           margin-bottom: calc(
@@ -329,7 +360,8 @@ body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words='hide_on_
             var(--psu-better_ctrltab-preview_font_size) * var(--psu-zoom-invert)
           ) !important;
           letter-spacing: calc(
-            var(--psu-better_ctrltab-preview_letter_spacing) * var(--psu-zoom-invert)
+            var(--psu-better_ctrltab-preview_letter_spacing) *
+              var(--psu-zoom-invert)
           );
           margin: 0 calc(var(--psu-better_ctrltab-preview_border_width) * -1) !important;
           padding: 0 !important;
@@ -344,7 +376,9 @@ body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words='hide_on_
           position: absolute !important;
           padding: 0 !important;
           margin: 0 !important;
-          margin-right: calc(var(--psu-better_ctrltab-preview_favicon_outdent) * -1) !important;
+          margin-right: calc(
+            var(--psu-better_ctrltab-preview_favicon_outdent) * -1
+          ) !important;
           margin-top: calc(
             (
                 var(--psu-better_ctrltab-preview_padding) / 2 +
@@ -358,7 +392,9 @@ body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words='hide_on_
         /* focused bg styling */
         &:focus {
           .ctrlTab-preview-inner {
-            background: var(--psu-better_ctrltab-preview_focus_background) !important;
+            background: var(
+              --psu-better_ctrltab-preview_focus_background
+            ) !important;
             border: none !important;
           }
         }
@@ -385,7 +421,7 @@ body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words='hide_on_
 /* Description: Cleans up zen's URL bar. */
 /* Author: @Dinno-DEV */
 /* Blurs the background */
-#urlbar[breakout-extend='true'] .urlbar-background {
+#urlbar[breakout-extend="true"] .urlbar-background {
   border: solid 3px color-mix(in hsl, hsl(0 0 50), transparent 90%) !important;
   border-radius: 15px !important;
   background-color: color-mix(
@@ -455,7 +491,12 @@ body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words='hide_on_
 }
 
 .toolbarbutton-1 {
-  &:hover > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack) {
+  &:hover
+    > :is(
+      .toolbarbutton-icon,
+      .toolbarbutton-text,
+      .toolbarbutton-badge-stack
+    ) {
     transition:
       background-color 0.3s ease-in-out,
       outline-color 0.3s ease-in-out; /* Smooth transition */
@@ -516,7 +557,12 @@ body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words='hide_on_
 
 /* For toolbarbutton-1 */
 .toolbarbutton-1 {
-  &:hover > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack) {
+  &:hover
+    > :is(
+      .toolbarbutton-icon,
+      .toolbarbutton-text,
+      .toolbarbutton-badge-stack
+    ) {
     transition:
       background-color 0.3s ease-in-out,
       outline-color 0.3s ease-in-out; /* Smooth transition */
@@ -592,7 +638,8 @@ body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words='hide_on_
 /* Name: NoHighlightSplit */
 /* Description: Removes the border highlight around the active tab while using split view. */
 /* Author: @JtdeGraaf */
-#tabbrowser-tabpanels[zen-split-view='true'] .browserSidebarContainer.deck-selected {
+#tabbrowser-tabpanels[zen-split-view="true"]
+  .browserSidebarContainer.deck-selected {
   outline: var(--zen-colors-border) !important;
 }
 

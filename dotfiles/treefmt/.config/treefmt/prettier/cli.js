@@ -1,31 +1,31 @@
-import prettier from "prettier";
-import * as sortImportsPlugin from "@ianvs/prettier-plugin-sort-imports";
-import * as tailwindPlugin from "prettier-plugin-tailwindcss";
+import prettier from 'prettier'
+import * as sortImportsPlugin from '@ianvs/prettier-plugin-sort-imports'
+import * as tailwindPlugin from 'prettier-plugin-tailwindcss'
 
-const filePaths = process.argv.slice(2);
+const filePaths = process.argv.slice(2)
 
 if (filePaths.length === 0) {
-  console.error("Please provide files to format.");
-  process.exit(1);
+  console.error('Please provide files to format.')
+  process.exit(1)
 }
 
 for (const filePath of filePaths) {
   try {
-    const file = Bun.file(filePath);
-    const code = await file.text();
-    const resolvedConfig = (await prettier.resolveConfig(filePath)) || {};
-    delete resolvedConfig.plugins;
+    const file = Bun.file(filePath)
+    const code = await file.text()
+    const resolvedConfig = (await prettier.resolveConfig(filePath)) || {}
+    delete resolvedConfig.plugins
 
     const formattedCode = await prettier.format(code, {
       ...resolvedConfig,
       filepath: filePath,
       plugins: [sortImportsPlugin, tailwindPlugin],
-    });
+    })
 
-    await Bun.write(filePath, formattedCode);
+    await Bun.write(filePath, formattedCode)
   } catch (error) {
-    console.error(`Failed to format ${filePath}:`, error);
-    process.exit(1);
+    console.error(`Failed to format ${filePath}:`, error)
+    process.exit(1)
   }
 }
 
