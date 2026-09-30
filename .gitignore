@@ -3,3 +3,4 @@ noctalia.*
 
 # ignore history files
 *history*
+*/files/*

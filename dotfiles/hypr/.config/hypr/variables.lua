@@ -5,6 +5,7 @@ vars = {
 	colorPicker = "pkill hyprpicker || hyprpicker -a",
 
 	-- Noctalia provides built-in UI surfaces for these
+	shellSettings = "noctalia msg settings-open",
 	powerMenu = "noctalia msg panel-toggle session",
 	appLauncher = "noctalia msg panel-toggle launcher",
 	wallpaperPicker = "noctalia msg panel-toggle wallpaper",

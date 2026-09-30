@@ -7,6 +7,7 @@ hl.bind("SUPER + T", hl.dsp.exec_cmd(vars.terminal))
 hl.bind("SUPER + B", hl.dsp.exec_cmd(vars.browser))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(vars.fileManager))
 
+hl.bind("SUPER + slash", hl.dsp.exec_cmd(vars.shellSettings))
 hl.bind("SUPER + A", hl.dsp.exec_cmd(vars.appLauncher))
 hl.bind("SUPER + W", hl.dsp.exec_cmd(vars.wallpaperPicker))
 hl.bind("SUPER + L", hl.dsp.exec_cmd(vars.powerMenu))
