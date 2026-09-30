@@ -6,6 +6,7 @@ font_family = "JetBrainsMono Nerd Font"
 icon_color = "primary"
 margin_ends = 0
 padding = 16
+radius = 8
 radius_top_left = 0
 radius_top_right = 0
 start = [ "workspaces" ]
