@@ -159,15 +159,15 @@ time_format = "{:%-I:%M %p}"
     show_cursor = true
 
 [theme]
-builtin = "Catppuccin"
+builtin = "Rosé Pine"
 community_palette = "Tokyo Night Moon"
 mode = "dark"
-source = "wallpaper"
+source = "builtin"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "hyprland", "qt" ]
-    community_ids = [ "zen-browser", "zed" ]
+    community_ids = [ "zen-browser", "discord", "zed" ]
 
 [wallpaper]
 directory = "/home/ziad/Pictures/wallpapers"

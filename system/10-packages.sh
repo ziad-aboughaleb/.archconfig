@@ -86,6 +86,7 @@ AddPackage ghostty
 AddPackage ghostty-nautilus
 AddPackage nautilus
 AddPackage zen-browser-bin
+AddPackage vesktop-bin
 
 # Fonts
 AddPackage noto-fonts
