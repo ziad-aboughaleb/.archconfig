@@ -1,20 +1,174 @@
--- File & Folder Dialogs
-hl.window_rule({ match = { title = "^(Open)(.*)$" }, float = true })
-hl.window_rule({ match = { title = "^(Save)(.*)$" }, float = true })
-hl.window_rule({ match = { title = "^(Select)(.*)$" }, float = true })
-hl.window_rule({ match = { title = "^(Choose)(.*)$" }, float = true })
-hl.window_rule({ match = { title = "^(Upload)(.*)$" }, float = true })
+-- Helper: Tags an array of window matches
+local function tagged_rule(tag, matches, field)
+	for _, match in ipairs(matches) do
+		if field then
+			local t = {}
+			t[field] = match
+			match = t
+		end
+		hl.window_rule({ match = match, tag = "+" .. tag })
+	end
+end
 
--- App Settings & Dialogs
-hl.window_rule({ match = { title = "^(Library)(.*)$" }, float = true })
-hl.window_rule({ match = { title = "^(Properties)$" }, float = true })
-hl.window_rule({ match = { title = "^(Preferences)$" }, float = true })
-hl.window_rule({ match = { title = "^(Settings)$" }, float = true })
-hl.window_rule({ match = { title = "^(About)(.*)$" }, float = true })
-hl.window_rule({ match = { title = "^(Authentication Required)(.*)$" }, float = true })
+-- Helper: Creates the actual rule for a tag
+local function create_tag(tag, rules)
+	local rule = { match = { tag = tag } }
+	for k, v in pairs(rules) do
+		rule[k] = v
+	end
+	hl.window_rule(rule)
+end
 
--- Media Popups
-hl.window_rule({ match = { title = "^(Picture-in-Picture)$" }, float = true })
+-- Tag Definitions
+local opaque_tag = "opaque"
+local float_tag = "float"
+local float_60_70_tag = "float_60_70"
+local float_70_80_tag = "float_70_80"
+local float_50_60_tag = "float_50_60"
+local game_tag = "game"
+local xwl_popup_tag = "xwl_popup"
+local system_monitor_tag = "system_monitor"
+local music_player_tag = "music_player"
+local communication_app_tag = "communication_app"
+local todo_app_tag = "todo_app"
 
--- Password Managers & Security
-hl.window_rule({ match = { title = "^(Bitwarden)(.*)$" }, float = true })
+----------------------
+---- Global Rules ----
+----------------------
+
+-- Default opacity & centering
+hl.window_rule({ match = { fullscreen = false }, opacity = vars.activeOpacity .. " override" })
+hl.window_rule({ match = { float = true, xwayland = false }, center = true })
+
+-- Picture-in-Picture
+hl.window_rule({
+	match = { title = "Picture(-| )in(-| )[Pp]icture" },
+	move = "(monitor_w*0.98-window_w) (monitor_h*0.97-window_h)",
+	pin = true,
+	float = true,
+	keep_aspect_ratio = true,
+})
+
+----------------------
+---- Tagged Rules ----
+----------------------
+
+-- Opaque Apps
+tagged_rule(opaque_tag, {
+	"foot",
+	"ghostty", -- Terminals
+	"equibop",
+	"vesktop", -- Discord clients
+	"org.quickshell", -- Shell
+	"feh|imv|swappy", -- Image viewers
+	"krita|gimp|inkscape|darktable", -- Image editors
+	"resolve|kdenlive|shotcut", -- Video editors
+	"blender|godot", -- 3D editors
+}, "class")
+
+-- Floating Apps
+tagged_rule(float_tag, {
+	"guifetch",
+	"yad|zenity",
+	"wev", -- Utilities/Dialogs
+	"org.gnome.FileRoller|file-roller", -- Archives
+	"blueman-manager", -- Bluetooth
+	"feh|imv|swappy",
+	"org.quickshell", -- Viewers/Shell
+}, "class")
+
+tagged_rule(float_tag, {
+	"File (Operation|Upload)( Progress)?", -- File operations
+	".* Properties",
+	'Rename ".*"', -- File info/rename
+}, "title")
+
+-- Sized Floaters
+tagged_rule(float_60_70_tag, {
+	"(Select|Open)( a)? (File|Folder)(s)?",
+	"Save As",
+}, "title")
+tagged_rule(float_60_70_tag, {
+	{ title = "(Save|Export) Image", class = "gimp" },
+})
+tagged_rule(float_60_70_tag, {
+	"org.pulseaudio.pavucontrol|com.saivert.pwvucontrol",
+	"yad-icon-browser",
+}, "class")
+
+tagged_rule(float_70_80_tag, { "org.gnome.Settings" }, "class")
+tagged_rule(float_50_60_tag, { "nwg-look", "system-config-printer" }, "class")
+
+-- Games
+tagged_rule(game_tag, { "steam_app_[0-9]+", "steam_app_default", "gamescope" }, "class")
+
+-- XWayland Popups
+tagged_rule(xwl_popup_tag, {
+	{ xwayland = true, title = "win[0-9]+" },
+	{ xwayland = true, title = "", class = "", initial_title = "", initial_class = "" },
+})
+
+-- Special Workspaces
+tagged_rule(system_monitor_tag, { "btop" }, "class")
+tagged_rule(music_player_tag, {
+	"feishin|Supersonic|Plexamp|Spotify|Cider|com.github.th-ch.youtube-music|com-maxrave-simpmusic-MainKt",
+}, "class")
+tagged_rule(music_player_tag, { "Spotify|Spotify Free" }, "initial_title")
+tagged_rule(communication_app_tag, { "discord|equibop|vesktop|whatsapp" }, "class")
+tagged_rule(todo_app_tag, { "todoist" }, "class")
+
+-----------------------
+---- Per-App Rules ----
+-----------------------
+
+-- Steam
+tagged_rule(float_tag, { { class = "steam", title = "Friends List" } })
+tagged_rule(xwl_popup_tag, { { class = "steam", title = "" } })
+
+-------------------------
+---- Apply Tags      ----
+-------------------------
+
+create_tag(opaque_tag, { opaque = true })
+create_tag(float_tag, { float = true })
+create_tag(float_50_60_tag, { float = true, size = "(monitor_w*0.5) (monitor_h*0.6)", center = true })
+create_tag(float_60_70_tag, { float = true, size = "(monitor_w*0.6) (monitor_h*0.7)", center = true })
+create_tag(float_70_80_tag, { float = true, size = "(monitor_w*0.7) (monitor_h*0.8)", center = true })
+create_tag(game_tag, { opaque = true, immediate = true, idle_inhibit = "always" })
+create_tag(xwl_popup_tag, {
+	no_dim = true,
+	no_shadow = true,
+	no_blur = true,
+	opaque = true,
+	rounding = math.min(10, vars.windowRounding),
+})
+create_tag(system_monitor_tag, { workspace = "special:sysmon" })
+create_tag(music_player_tag, { workspace = "special:music" })
+create_tag(communication_app_tag, { workspace = "special:communication" })
+create_tag(todo_app_tag, { workspace = "special:todo" })
+
+-------------------------
+---- Workspace Rules ----
+-------------------------
+
+hl.workspace_rule({ workspace = "w[tv1]s[false]", gaps_out = vars.singleWindowGapsOut })
+hl.workspace_rule({ workspace = "f[1]s[false]", gaps_out = vars.singleWindowGapsOut })
+
+---------------------
+---- Layer Rules ----
+---------------------
+
+-- Generic Utilities
+hl.layer_rule({ match = { namespace = "hyprpicker" }, animation = "fade" })
+hl.layer_rule({ match = { namespace = "logout_dialog" }, animation = "fade" })
+hl.layer_rule({ match = { namespace = "selection" }, animation = "fade" })
+hl.layer_rule({ match = { namespace = "wayfreeze" }, animation = "fade" })
+hl.layer_rule({ match = { namespace = "launcher" }, animation = "popin 80%", blur = true })
+
+-- Noctalia Shell UI
+hl.layer_rule({ match = { namespace = "noctalia-(area-picker|screenshot|selection)" }, no_anim = true })
+hl.layer_rule({
+	match = { namespace = "noctalia-(panel|osd|notification|background)" },
+	animation = "fade",
+	blur = true,
+})

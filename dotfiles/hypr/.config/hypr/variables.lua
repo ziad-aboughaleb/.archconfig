@@ -1,4 +1,22 @@
 vars = {
+	-- Window UI Variables
+	borderSize = 2,
+	gapsIn = 4,
+	gapsOut = 8,
+	singleWindowGapsOut = 8,
+	windowRounding = 4,
+	windowRoundingPower = 10.0,
+
+	-- Opacity & Blur
+	activeOpacity = 0.95,
+	inactiveOpacity = 0.8,
+	blurSize = 10,
+	blurPasses = 3,
+
+	-- Input
+	kbLayout = "us,ara",
+	kbOptions = "grp:win_space_toggle",
+
 	-- Use Noctalia's native IPC for screenshots
 	screenshot = "noctalia msg screenshot-region",
 	windowScreenshot = "noctalia msg screenshot-fullscreen",
