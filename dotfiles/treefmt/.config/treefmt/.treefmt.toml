@@ -31,12 +31,7 @@ options = ["fmt"]
 includes = ["*.toml"]
 
 [formatter.prettier]
-command = "prettier"
-options = [
-  "--write",
-  "--config",
-  "/home/ziad/.config/treefmt/prettier/.prettierrc.json",
-]
+command = "/home/ziad/.config/treefmt/prettier/my-prettier-tool"
 includes = [
   "*.js",
   "*.jsx",

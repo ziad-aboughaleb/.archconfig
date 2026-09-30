@@ -1,2 +1,2 @@
-# ignore noctalia theme files
-*/noctalia.*
+*/node_modules/*
+*.lock

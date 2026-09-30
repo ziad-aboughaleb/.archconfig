@@ -9,6 +9,8 @@ CreateLink /etc/localtime /usr/share/zoneinfo/Africa/Cairo
 
 # Boot & Hardware config
 CopyFile /etc/fstab
+CopyFile /boot/limine.conf
+CopyFile /etc/limine-snapper-sync.conf
 CopyFile /etc/mkinitcpio.conf
 CopyFile /etc/mkinitcpio.d/linux-cachyos.preset
 CopyFile /etc/mkinitcpio.d/linux-cachyos-lts.preset
@@ -29,10 +31,8 @@ CopyFile /etc/subuid
 CopyFile /etc/subgid
 CopyFile /etc/sudoers.d/00_ziad 440
 
-# NetworkManager & Firewall
+# Firewall
 CopyFile /etc/ufw/ufw.conf
-# Note: contains plain-text wifi password, ensure your repo is private!
-CopyFile /etc/NetworkManager/system-connections/ziad.nmconnection 600
 
 # Snapshots & ZRAM
 CopyFile /etc/snapper/configs/root
