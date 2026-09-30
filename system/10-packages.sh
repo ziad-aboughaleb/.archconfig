@@ -1,6 +1,6 @@
 # 10-packages.sh - System Packages
 
-# --- Base System & Kernels ---
+# Base System & Kernels
 AddPackage base
 AddPackage base-devel
 AddPackage linux-cachyos
@@ -10,19 +10,19 @@ AddPackage intel-ucode
 AddPackage sof-firmware
 AddPackage mkinitcpio
 
-# --- CachyOS Specific ---
+# CachyOS Specific
 AddPackage cachyos-keyring
 AddPackage cachyos-mirrorlist
 AddPackage cachyos-v3-mirrorlist
 AddPackage cachyos-v4-mirrorlist
 
-# --- Drivers ---
+# Drivers
 AddPackage nvidia-open-dkms
 AddPackage nvidia-utils
 AddPackage lib32-nvidia-utils
 AddPackage nvidia-prime
 
-# --- Bootloader & Filesystem ---
+# Bootloader & Filesystem
 AddPackage btrfs-progs
 AddPackage dosfstools
 AddPackage efibootmgr
@@ -30,14 +30,14 @@ AddPackage limine
 AddPackage limine-snapper-sync
 AddPackage snapper
 
-# --- Networking & Bluetooth ---
+# Networking & Bluetooth
 AddPackage networkmanager
 AddPackage wpa_supplicant
 AddPackage bluez
 AddPackage bluez-utils
 AddPackage ufw
 
-# --- Audio (Pipewire) ---
+# Audio (Pipewire)
 AddPackage pipewire
 AddPackage pipewire-alsa
 AddPackage pipewire-jack
@@ -46,7 +46,7 @@ AddPackage wireplumber
 AddPackage libpulse
 AddPackage gst-plugin-pipewire
 
-# --- Desktop Environment / Wayland ---
+# Desktop Environment / Wayland
 AddPackage hyprland
 AddPackage xdg-desktop-portal-hyprland
 AddPackage uwsm
@@ -54,7 +54,7 @@ AddPackage greetd
 AddPackage noctalia
 AddPackage noctalia-greeter
 
-# --- Utilities & CLI ---
+# Utilities & CLI
 AddPackage fastfetch
 AddPackage hyprpicker
 AddPackage btop
@@ -67,27 +67,27 @@ AddPackage sbctl
 AddPackage zram-generator
 AddPackage power-profiles-daemon
 
-# --- Dev Tools ---
+# Dev Tools
 AddPackage --foreign aconfmgr-git
 AddPackage github-cli
 AddPackage git
 AddPackage bun
 AddPackage zed
 
-# --- Formaters ---
+# Formaters
 AddPackage --foreign treefmt
 AddPackage taplo-cli
 AddPackage stylua
 AddPackage shfmt
 AddPackage jq
 
-# --- Apps ---
+# Apps
 AddPackage ghostty
 AddPackage ghostty-nautilus
 AddPackage nautilus
 AddPackage zen-browser-bin
 
-# --- Fonts ---
+# Fonts
 AddPackage noto-fonts
 AddPackage noto-fonts-cjk
 AddPackage noto-fonts-emoji
