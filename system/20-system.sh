@@ -1,27 +1,44 @@
 # 20-system.sh - Core System Configuration
 
-# System Identity & Locale
-CopyFile /etc/shells
+# ==========================================
+# 1. SYSTEM IDENTITY & LOCALE
+# ==========================================
 CopyFile /etc/hostname
 CopyFile /etc/locale.conf
 CreateLink /etc/localtime /usr/share/zoneinfo/Africa/Cairo
+CopyFile /etc/shells
 
-# Boot & Hardware config
-CopyFile /etc/fstab
+# ==========================================
+# 2. BOOTLOADER (LIMINE)
+# ==========================================
+CreateDir /boot
 CopyFile /boot/limine.conf
-CopyFile /etc/modprobe.d/nvidia.conf
-CopyFile /etc/X11/xorg.conf.d/00-keyboard.conf
 
-# Pacman configs
+# ==========================================
+# 3. FILESYSTEM & HARDWARE
+# ==========================================
+CopyFile /etc/fstab
+CopyFile /etc/modprobe.d/nvidia.conf
+
+# ==========================================
+# 4. PACKAGE MANAGER (PACMAN)
+# ==========================================
 CopyFile /etc/pacman.conf
 CopyFile /etc/pacman.d/hooks/99-limine.hook
 
-# Permissions & Sudo
+# ==========================================
+# 5. SECURITY, FIREWALL & PERMISSIONS
+# ==========================================
 CopyFile /etc/sudoers.d/00_ziad 440
-
-# Firewall
 CopyFile /etc/ufw/ufw.conf
 
-# Snapshots & ZRAM
-CopyFile /etc/snapper/configs/root
+# ==========================================
+# 6. SYSTEM PERFORMANCE & MEMORY (ZRAM)
+# ==========================================
 CopyFile /etc/systemd/zram-generator.conf
+
+# ==========================================
+# 7. SYSTEM SNAPSHOTS (SNAPPER)
+# ==========================================
+CopyFile /etc/limine-snapper-sync.conf
+CopyFile /etc/snapper/configs/root
