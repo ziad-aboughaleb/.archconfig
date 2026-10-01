@@ -99,6 +99,7 @@ AddPackage zed
 AddPackage ghostty
 AddPackage ghostty-nautilus
 AddPackage nautilus
+AddPackage obs-studio
 AddPackage vesktop-bin
 AddPackage zen-browser-bin
 

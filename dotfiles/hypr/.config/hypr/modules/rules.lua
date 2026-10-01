@@ -166,9 +166,7 @@ hl.layer_rule({ match = { namespace = "wayfreeze" }, animation = "fade" })
 hl.layer_rule({ match = { namespace = "launcher" }, animation = "popin 80%", blur = true })
 
 -- Noctalia Shell UI
-hl.layer_rule({ match = { namespace = "noctalia-(area-picker|screenshot|selection)" }, no_anim = true })
 hl.layer_rule({
-	match = { namespace = "noctalia-(panel|osd|notification|background)" },
-	animation = "fade",
-	blur = true,
+	match = { namespace = "noctalia-.*" },
+	no_anim = true,
 })

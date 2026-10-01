@@ -6,3 +6,4 @@ applied_builtin_ids = "btop ghostty gtk3 gtk4 hyprland qt"
 
 [wallpaper_panel]
 flatten = true
+sort = "date_desc"
