@@ -43,9 +43,15 @@ CreateLink /etc/systemd/system/multi-user.target.wants/power-profiles-daemon.ser
 CreateLink /etc/systemd/system/sysinit.target.wants/zram-generator.service /usr/lib/systemd/system/zram-generator.service
 
 # ==========================================
-# 7. AUDIO (GLOBAL USER SERVICES)
+# 7. AUDIO
 # ==========================================
 CreateLink /etc/systemd/user/pipewire-session-manager.service /usr/lib/systemd/user/wireplumber.service
 CreateLink /etc/systemd/user/pipewire.service.wants/wireplumber.service /usr/lib/systemd/user/wireplumber.service
 CreateLink /etc/systemd/user/sockets.target.wants/pipewire-pulse.socket /usr/lib/systemd/user/pipewire-pulse.socket
 CreateLink /etc/systemd/user/sockets.target.wants/pipewire.socket /usr/lib/systemd/user/pipewire.socket
+
+# ==========================================
+# 8. TIME SYNCHRONIZATION
+# ==========================================
+CreateLink /etc/systemd/system/dbus-org.freedesktop.timesync1.service /usr/lib/systemd/system/systemd-timesyncd.service
+CreateLink /etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service /usr/lib/systemd/system/systemd-timesyncd.service

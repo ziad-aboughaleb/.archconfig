@@ -1,5 +1,8 @@
 config_version = 14
 
+[audio]
+enable_overdrive = true
+
 [bar.default]
 background_opacity = 0.89999997988343239
 capsule_radius = 8
@@ -14,6 +17,9 @@ radius_top_left = 0
 radius_top_right = 0
 start = [ "workspaces" ]
 widget_spacing = 18
+
+[brightness]
+sync_all_monitors = true
 
 [control_center]
 show_shortcut_labels = false
@@ -198,12 +204,12 @@ time_format = "{:%-I:%M %p}"
 builtin = "Rosé Pine"
 community_palette = "Tokyo Night Moon"
 mode = "dark"
-source = "wallpaper"
+source = "builtin"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "hyprland", "qt" ]
-    community_ids = [ "zen-browser", "discord", "zed", "obs" ]
+    community_ids = [ "zen-browser", "discord", "zed", "prismlauncher", "obs", "papirus-icons" ]
 
 [wallpaper]
 directory = "/home/ziad/Pictures/wallpapers"
@@ -220,13 +226,10 @@ transition_on_startup = true
     path = "/home/ziad/Pictures/wallpapers/wallhaven-3q6m6y_2560x1600.png"
 
     [[wallpaper.favorite]]
-    palette_source = "wallpaper"
+    builtin_palette = "Rosé Pine"
+    palette_source = "builtin"
     path = "/home/ziad/Pictures/wallpapers/wallhaven-3q6m6y_2560x1600.png"
     theme_mode = "dark"
-    wallpaper_scheme = "m3-content"
-
-    [[wallpaper.favorite]]
-    path = "/home/ziad/Pictures/wallpapers/nord_minimal_cat.png"
 
 [widget.clock]
 anchor = true

@@ -9,7 +9,25 @@ export ACONFMGR_CONFIG="${ACONFMGR_CONFIG:-$ARCHCONFIG_DIR/system}"
 echo "==> Installing base packages..."
 sudo pacman -Syu --needed git base-devel stow
 
-# 1. Install Paru
+# 1. User Creation
+echo "==> User Setup"
+read -r -p "Enter a username to create/configure (or leave blank to skip): " TARGET_USER
+
+if [[ -n "$TARGET_USER" ]]; then
+  if id "$TARGET_USER" &>/dev/null; then
+    echo "==> User '$TARGET_USER' already exists. Skipping creation."
+  else
+    echo "==> Creating user '$TARGET_USER'..."
+    # -m: create home dir | -G wheel: add to sudo group | -s /bin/zsh: default shell
+    sudo useradd -m -G wheel -s /bin/zsh "$TARGET_USER"
+
+    echo "==> Please set the password for '$TARGET_USER': "
+    sudo passwd "$TARGET_USER"
+    echo "✅ User '$TARGET_USER' created successfully."
+  fi
+fi
+
+# 2. Install Paru
 if ! command -v paru &>/dev/null; then
   echo "==> Installing paru..."
   git clone https://aur.archlinux.org/paru-bin.git /tmp/paru-bin
@@ -19,17 +37,17 @@ if ! command -v paru &>/dev/null; then
   rm -rf /tmp/paru-bin
 fi
 
-# 2. Install aconfmgr
+# 3. Install aconfmgr
 echo "==> Installing aconfmgr..."
 paru -S --needed aconfmgr-git
 
-# 3. Apply aconfmgr configuration
+# 4. Apply aconfmgr configuration
 if [ -d "$ACONFMGR_CONFIG" ]; then
   echo "==> Applying aconfmgr setup..."
   aconfmgr -c "$ACONFMGR_CONFIG" apply
 fi
 
-# 4. Stow all dotfiles using --no-folding (matching your zsh function)
+# 5. Stow all dotfiles using --no-folding
 if [ -d "$DOTFILES_DIR" ]; then
   echo "==> Stowing dotfiles..."
   for d in "$DOTFILES_DIR"/*/; do

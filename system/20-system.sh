@@ -3,21 +3,20 @@
 # ==========================================
 # 1. SYSTEM IDENTITY & LOCALE
 # ==========================================
-CopyFile /etc/hostname
-CopyFile /etc/locale.conf
 CreateLink /etc/localtime /usr/share/zoneinfo/Africa/Cairo
+CopyFile /etc/locale.conf
 CopyFile /etc/shells
 
 # ==========================================
 # 2. BOOTLOADER (LIMINE)
 # ==========================================
 CreateDir /boot
-CopyFile /boot/limine.conf
+CopyFile /boot/limine.conf 755
 
 # ==========================================
 # 3. FILESYSTEM & HARDWARE
 # ==========================================
-CopyFile /etc/fstab
+SetFileProperty / mode 555
 CopyFile /etc/modprobe.d/nvidia.conf
 
 # ==========================================
@@ -31,6 +30,8 @@ CopyFile /etc/pacman.d/hooks/99-limine.hook
 # ==========================================
 CopyFile /etc/sudoers.d/00_ziad 440
 CopyFile /etc/ufw/ufw.conf
+CopyFile /etc/ufw/user.rules
+CopyFile /etc/ufw/user6.rules
 
 # ==========================================
 # 6. SYSTEM PERFORMANCE & MEMORY (ZRAM)

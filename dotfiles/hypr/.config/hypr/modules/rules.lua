@@ -109,13 +109,13 @@ tagged_rule(xwl_popup_tag, {
 })
 
 -- Special Workspaces
-tagged_rule(system_monitor_tag, { "btop" }, "class")
-tagged_rule(music_player_tag, {
-	"feishin|Supersonic|Plexamp|Spotify|Cider|com.github.th-ch.youtube-music|com-maxrave-simpmusic-MainKt",
-}, "class")
-tagged_rule(music_player_tag, { "Spotify|Spotify Free" }, "initial_title")
-tagged_rule(communication_app_tag, { "discord|equibop|vesktop|whatsapp" }, "class")
-tagged_rule(todo_app_tag, { "todoist" }, "class")
+-- tagged_rule(system_monitor_tag, { "btop" }, "class")
+-- tagged_rule(music_player_tag, {
+-- 	"feishin|Supersonic|Plexamp|Spotify|Cider|com.github.th-ch.youtube-music|com-maxrave-simpmusic-MainKt",
+-- }, "class")
+-- tagged_rule(music_player_tag, { "Spotify|Spotify Free" }, "initial_title")
+-- tagged_rule(communication_app_tag, { "discord|equibop|vesktop|whatsapp" }, "class")
+-- tagged_rule(todo_app_tag, { "todoist" }, "class")
 
 -----------------------
 ---- Per-App Rules ----
