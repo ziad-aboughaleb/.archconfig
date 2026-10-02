@@ -1,7 +1,7 @@
 # 00-ignore.sh - Ignore Rules for aconfmgr
 
 # ==========================================
-# 1. GLOBAL WILDCARDS
+# GLOBAL WILDCARDS
 # ==========================================
 # Backups, caches, logs, and snapshots
 IgnorePath '*.pacsave'
@@ -15,12 +15,13 @@ IgnorePath '*/log/*'
 IgnorePath '/.snapshots/*'
 
 # ==========================================
-# 2. SYSTEM STATE & BOOT
+# SYSTEM STATE & BOOT
 # ==========================================
-# Kernels and microcode
+# Kernels, presets, and microcode
 IgnorePath '/boot/vmlinuz-*'
 IgnorePath '/boot/initramfs-*'
 IgnorePath '/boot/*-ucode.img'
+IgnorePath '/etc/mkinitcpio.d/*'
 
 # Bootloader directories and Windows metadata
 IgnorePath '/boot/efi/*'
@@ -45,7 +46,7 @@ IgnorePath '/etc/vconsole.conf'
 IgnorePath '/etc/conf.d/snapper'
 
 # ==========================================
-# 3. SECURITY & CREDENTIALS (DO NOT COMMIT)
+# SECURITY & CREDENTIALS (DO NOT COMMIT)
 # ==========================================
 # User authentication files
 IgnorePath '/etc/passwd*'
@@ -66,7 +67,7 @@ IgnorePath '/etc/audisp'
 IgnorePath '/etc/audit/*'
 
 # ==========================================
-# 4. AUTO-GENERATED ASSETS
+# AUTO-GENERATED ASSETS
 # ==========================================
 # Dynamically compiled libraries, schemas, and caches
 IgnorePath '/usr/lib/modules/*'
@@ -81,14 +82,17 @@ IgnorePath '*/icon-theme.cache'
 IgnorePath '/etc/fonts/conf.d/*'
 
 # ==========================================
-# 5. PACKAGE MANAGER
+# PACKAGE MANAGER
 # ==========================================
-# Local mirror rankings and GPG keyrings
+# Local mirror rankings, backups, and GPG keyrings
 IgnorePath '/etc/pacman.d/mirrorlist'
+IgnorePath '/etc/pacman.d/cachyos-mirrorlist*'
+IgnorePath '/etc/pacman.d/cachyos-v*-mirrorlist*'
+IgnorePath '/etc/pacman.d/*-backup'
 IgnorePath '/etc/pacman.d/gnupg/*'
 
 # ==========================================
-# 6. MACHINE-SPECIFIC CONFIGS
+# MACHINE-SPECIFIC CONFIGS
 # ==========================================
 # Hostnames, hardware UUIDs, and input layouts
 IgnorePath '/etc/X11/xorg.conf.d/00-keyboard.conf'

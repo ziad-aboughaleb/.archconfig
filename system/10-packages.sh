@@ -1,7 +1,7 @@
 # 10-packages.sh - System Packages
 
 # ==========================================
-# 1. CORE SYSTEM & CACHYOS
+# CORE SYSTEM & CACHYOS
 # ==========================================
 AddPackage base
 AddPackage base-devel
@@ -9,6 +9,7 @@ AddPackage cachyos-keyring
 AddPackage cachyos-mirrorlist
 AddPackage cachyos-v3-mirrorlist
 AddPackage cachyos-v4-mirrorlist
+AddPackage cachyos-rate-mirrors
 AddPackage linux-cachyos
 AddPackage linux-cachyos-headers
 AddPackage linux-firmware
@@ -16,7 +17,7 @@ AddPackage mkinitcpio
 AddPackage sof-firmware
 
 # ==========================================
-# 2. BOOTLOADER & FILESYSTEM
+# BOOTLOADER & FILESYSTEM
 # ==========================================
 AddPackage btrfs-progs
 AddPackage dosfstools
@@ -27,7 +28,7 @@ AddPackage snap-pac
 AddPackage snapper
 
 # ==========================================
-# 3. HARDWARE DRIVERS
+# HARDWARE DRIVERS
 # ==========================================
 # cpu microcode
 if grep -qi intel /proc/cpuinfo; then
@@ -50,7 +51,7 @@ elif lspci | grep -qiE 'vga|3d' | grep -qi amd; then
 fi
 
 # ==========================================
-# 4. NETWORKING, BLUETOOTH & SECURITY
+# NETWORKING, BLUETOOTH & SECURITY
 # ==========================================
 AddPackage wpa_supplicant
 AddPackage networkmanager
@@ -59,7 +60,7 @@ AddPackage bluez
 AddPackage ufw
 
 # ==========================================
-# 5. AUDIO (PIPEWIRE)
+# AUDIO (PIPEWIRE)
 # ==========================================
 AddPackage gst-plugin-pipewire
 AddPackage pipewire-pulse
@@ -70,7 +71,7 @@ AddPackage wireplumber
 AddPackage libpulse
 
 # ==========================================
-# 6. DESKTOP ENVIRONMENT (HYPRLAND & NOCTALIA)
+# DESKTOP ENVIRONMENT (HYPRLAND & NOCTALIA)
 # ==========================================
 AddPackage xdg-desktop-portal-hyprland
 AddPackage hyprland
@@ -80,7 +81,7 @@ AddPackage noctalia
 AddPackage noctalia-greeter
 
 # ==========================================
-# 7. CLI & SYSTEM UTILITIES
+# CLI & SYSTEM UTILITIES
 # ==========================================
 AddPackage power-profiles-daemon
 AddPackage zram-generator
@@ -95,7 +96,7 @@ AddPackage stow
 AddPackage zsh
 
 # ==========================================
-# 8. DEVELOPMENT TOOLS & FORMATTERS
+# DEVELOPMENT TOOLS & FORMATTERS
 # ==========================================
 AddPackage --foreign aconfmgr-git
 AddPackage github-cli
@@ -109,7 +110,7 @@ AddPackage jq
 AddPackage zed
 
 # ==========================================
-# 9. GUI APPLICATIONS
+# GUI APPLICATIONS
 # ==========================================
 AddPackage ghostty
 AddPackage ghostty-nautilus
@@ -119,7 +120,7 @@ AddPackage vesktop-bin
 AddPackage zen-browser-bin
 
 # ==========================================
-# 10. FONTS & THEMING
+# FONTS & THEMING
 # ==========================================
 AddPackage --foreign bibata-cursor-theme-bin
 AddPackage papirus-icon-theme
@@ -131,6 +132,6 @@ AddPackage ttf-liberation
 AddPackage ttf-jetbrains-mono-nerd
 
 # ==========================================
-# 11. OTHER PACKAGES
+# OTHER PACKAGES
 # ==========================================
 AddPackage --foreign freesmlauncher-bin
