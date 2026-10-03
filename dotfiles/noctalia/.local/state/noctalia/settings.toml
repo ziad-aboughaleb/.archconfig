@@ -100,6 +100,13 @@ widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-000000000000
         reversed = false
         show_when_idle = true
 
+[dock]
+auto_hide = true
+background_opacity = 0.89999997988343239
+enabled = true
+radius = 8
+reserve_space = false
+
 [idle]
 behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
 
