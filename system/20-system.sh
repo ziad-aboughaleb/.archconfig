@@ -12,7 +12,7 @@ CopyFile /etc/shells
 # ==========================================
 CreateDir /boot
 CopyFile /boot/limine.conf 755
-CopyFile /etc/profile.d/tty-config.sh
+CopyFile /etc/profile.d/tty-config.sh 755
 
 # ==========================================
 # FILESYSTEM & HARDWARE

@@ -35,6 +35,7 @@ IgnorePath '/boot/BackupSbb.bin'
 # Temporary directories
 IgnorePath '/var/*'
 IgnorePath '/tmp/*'
+IgnorePath '/opt/*'
 
 # Dynamically generated system states
 IgnorePath '/etc/.updated'

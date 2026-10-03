@@ -135,3 +135,4 @@ AddPackage ttf-jetbrains-mono-nerd
 # OTHER PACKAGES
 # ==========================================
 AddPackage --foreign freesmlauncher-bin
+AddPackage davinci-resolve
