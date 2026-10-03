@@ -39,9 +39,9 @@ CreateLink /etc/systemd/system/multi-user.target.wants/ufw.service /usr/lib/syst
 # ==========================================
 # POWER & PERFORMANCE
 # ==========================================
-CreateLink /etc/systemd/system/graphical.target.wants/upower.service /usr/lib/systemd/system/upower.service
-CreateLink /etc/systemd/system/multi-user.target.wants/power-profiles-daemon.service /usr/lib/systemd/system/power-profiles-daemon.service
 CreateLink /etc/systemd/system/sysinit.target.wants/zram-generator.service /usr/lib/systemd/system/zram-generator.service
+CreateLink /etc/systemd/system/graphical.target.wants/upower.service /usr/lib/systemd/system/upower.service
+CreateLink /etc/systemd/system/multi-user.target.wants/tlp.service /usr/lib/systemd/system/tlp.service
 
 # ==========================================
 # AUDIO

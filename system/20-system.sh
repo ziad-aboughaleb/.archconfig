@@ -38,6 +38,7 @@ CopyFile /etc/ufw/user6.rules
 # SYSTEM PERFORMANCE & MEMORY (ZRAM)
 # ==========================================
 CopyFile /etc/systemd/zram-generator.conf
+CopyFile /etc/tlp.d/00-custom.conf
 
 # ==========================================
 # SYSTEM SNAPSHOTS (SNAPPER)

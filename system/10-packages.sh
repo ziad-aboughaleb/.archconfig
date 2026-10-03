@@ -83,11 +83,11 @@ AddPackage noctalia-greeter
 # ==========================================
 # CLI & SYSTEM UTILITIES
 # ==========================================
-AddPackage power-profiles-daemon
 AddPackage zram-generator
-AddPackage sbctl
+AddPackage tlp
 AddPackage sudo
 AddPackage paru
+AddPackage sbctl
 AddPackage hyprpicker
 AddPackage fastfetch
 AddPackage btop
