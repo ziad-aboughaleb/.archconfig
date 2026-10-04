@@ -103,7 +103,7 @@ AddPackage github-cli
 AddPackage git
 AddPackage bun
 AddPackage --foreign treefmt
-AddPackage tex-fmt-bin
+AddPackage --foreign tex-fmt-bin
 AddPackage taplo-cli
 AddPackage stylua
 AddPackage shfmt

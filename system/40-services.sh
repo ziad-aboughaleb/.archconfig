@@ -56,3 +56,8 @@ CreateLink /etc/systemd/user/sockets.target.wants/pipewire.socket /usr/lib/syste
 # ==========================================
 CreateLink /etc/systemd/system/dbus-org.freedesktop.timesync1.service /usr/lib/systemd/system/systemd-timesyncd.service
 CreateLink /etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service /usr/lib/systemd/system/systemd-timesyncd.service
+
+# ==========================================
+# SNAPSHOTS & BACKUPS
+# ==========================================
+CreateLink /etc/systemd/system/timers.target.wants/snapper-cleanup.timer /usr/lib/systemd/system/snapper-cleanup.timer
