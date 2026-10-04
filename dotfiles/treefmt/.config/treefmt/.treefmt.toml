@@ -30,6 +30,10 @@ command = "taplo"
 options = ["fmt"]
 includes = ["*.toml"]
 
+[formatter.texfmt]
+command = "tex-fmt"
+includes = ["*.tex", "*.sty", "*.cls"]
+
 [formatter.prettier]
 command = "/home/ziad/.config/treefmt/prettier/my-prettier-tool"
 includes = [

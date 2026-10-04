@@ -242,10 +242,16 @@ transition_on_startup = true
     path = "/home/ziad/Pictures/wallpapers/wallhaven-5yp7j8_2560x1600.png"
 
     [[wallpaper.favorite]]
+    palette_source = "wallpaper"
     path = "/home/ziad/Pictures/wallpapers/wallhaven-xek51o_2560x1600.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "m3-content"
 
     [[wallpaper.favorite]]
+    palette_source = "wallpaper"
     path = "/home/ziad/Pictures/wallpapers/wallhaven-yqkqeg_2560x1600.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "m3-content"
 
 [widget.clock]
 anchor = true

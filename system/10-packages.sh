@@ -103,6 +103,7 @@ AddPackage github-cli
 AddPackage git
 AddPackage bun
 AddPackage --foreign treefmt
+AddPackage tex-fmt-bin
 AddPackage taplo-cli
 AddPackage stylua
 AddPackage shfmt
@@ -136,3 +137,4 @@ AddPackage ttf-jetbrains-mono-nerd
 # ==========================================
 AddPackage --foreign freesmlauncher-bin
 AddPackage davinci-resolve
+AddPackage papers
