@@ -125,6 +125,7 @@ AddPackage zen-browser-bin
 # ==========================================
 AddPackage --foreign bibata-cursor-theme-bin
 AddPackage papirus-icon-theme
+AddPackage terminus-font
 AddPackage noto-fonts
 AddPackage noto-fonts-cjk
 AddPackage noto-fonts-emoji
@@ -138,3 +139,4 @@ AddPackage ttf-jetbrains-mono-nerd
 AddPackage --foreign freesmlauncher-bin
 AddPackage davinci-resolve
 AddPackage papers
+AddPackage localsend

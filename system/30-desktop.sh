@@ -17,5 +17,6 @@ CopyFile /usr/share/icons/default/index.theme
 # ==========================================
 # EARLY BOOT TTY COLORS (MKINITCPIO)
 # ==========================================
-CopyFile /etc/vconsole.conf
+CopyFile /etc/initcpio/install/tty-colors 755
 CopyFile /etc/mkinitcpio.conf
+CopyFile /etc/vconsole.conf
