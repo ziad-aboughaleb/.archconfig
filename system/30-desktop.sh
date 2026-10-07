@@ -13,3 +13,9 @@ CopyFile /etc/polkit-1/rules.d/49-noctalia-greeter-passwordless-sync.rules
 CopyFile /etc/environment
 CopyFile /etc/X11/xresources
 CopyFile /usr/share/icons/default/index.theme
+
+# ==========================================
+# EARLY BOOT TTY COLORS (MKINITCPIO)
+# ==========================================
+CopyFile /etc/vconsole.conf
+CopyFile /etc/mkinitcpio.conf

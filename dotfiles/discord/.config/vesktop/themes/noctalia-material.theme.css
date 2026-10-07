@@ -15,23 +15,24 @@
 /* Material You addon */
 @import url("https://capnkitten.github.io/BetterDiscord/Themes/Material-Discord/css/addons/material-you/source.css");
 
+
+
+
 /* MATERIAL YOU DARK THEME SETTINGS */
 .theme-dark {
-  --saturation-modifier: 0.31;
-  --lightness-modifier: 0.225;
-  --text-lightness-modifier: 1;
+    --saturation-modifier: 0.31;
+    --lightness-modifier: 0.225;
+    --text-lightness-modifier: 1.0;
 }
 
 /* MATERIAL YOU LIGHT THEME SETTINGS */
 .theme-light {
-  --saturation-modifier: 0.74;
-  --lightness-modifier: 2.125;
-  --text-lightness-modifier: 1;
+    --saturation-modifier: 0.74;
+    --lightness-modifier: 2.125;
+    --text-lightness-modifier: 1.0;
 }
 
-:root,
-.theme-dark,
-.theme-light {
+:root, .theme-dark, .theme-light {
   /* See options at https://github.com/CapnKitten/Material-Discord */
   /* Accent */
   --accent-hue: 3;
@@ -54,14 +55,8 @@
   --message-color: #221f1e;
   --message-color-hover: hsl(
     var(--accent-hue),
-    calc(
-      var(--accent-saturation) * var(--saturation-modifier) *
-        var(--saturation-factor)
-    ),
-    calc(
-      var(--accent-lightness) * var(--lightness-modifier) *
-        var(--ui-darkness-modifier) * 4
-    )
+    calc(var(--accent-saturation) * var(--saturation-modifier) * var(--saturation-factor)),
+    calc(var(--accent-lightness) * var(--lightness-modifier) * var(--ui-darkness-modifier) * 4)
   ) !important;
   --message-color-alt: #3b2d2c;
   --attachment-color: #442928;
@@ -92,14 +87,8 @@
 
   /* Ensure channels-default is different from the active one - works in dark mode / light mode is another story... */
   --text-tertiary: hsl(
-    var(--accent-hue),
-    calc(
-      var(--accent-saturation) * var(--saturation-modifier) * 0.78 *
-        var(--saturation-factor)
-    ),
-    calc(
-      var(--accent-lightness) * var(--lightness-modifier) *
-        var(--ui-darkness-modifier) * var(--text-lightness-modifier) * 3
-    )
-  ) !important;
+        var(--accent-hue),
+        calc(var(--accent-saturation) * var(--saturation-modifier) * 0.78 * var(--saturation-factor)),
+        calc(var(--accent-lightness) * var(--lightness-modifier) * var(--ui-darkness-modifier) * var(--text-lightness-modifier) * 3.0)
+    ) !important;
 }

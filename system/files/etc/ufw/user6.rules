@@ -31,6 +31,12 @@
 ### tuple ### allow tcp 25565:25575 ::/0 any ::/0 in
 -A ufw6-user-input -p tcp -m multiport --dports 25565:25575 -j ACCEPT
 
+### tuple ### allow tcp 53317 ::/0 any ::/0 in
+-A ufw6-user-input -p tcp --dport 53317 -j ACCEPT
+
+### tuple ### allow udp 53317 ::/0 any ::/0 in
+-A ufw6-user-input -p udp --dport 53317 -j ACCEPT
+
 ### END RULES ###
 
 ### LOGGING ###

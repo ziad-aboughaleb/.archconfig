@@ -32,9 +32,7 @@ for (const filePath of filePaths) {
 /*
 build contained binary using
 
-bun i
-
-bun build ./cli.js --compile --outfile my-prettier-tool \
+bun i && bun build ./cli.js --compile --outfile my-prettier-tool \
   --external "@prettier/plugin-oxc" \
   --external "@prettier/plugin-hermes" \
   --external "prettier-plugin-astro" \
@@ -42,5 +40,5 @@ bun build ./cli.js --compile --outfile my-prettier-tool \
   --external "prettier-plugin-marko" \
   --external "@zackad/prettier-plugin-twig" \
   --external "@prettier/plugin-pug" \
-  --external "@shopify/prettier-plugin-liquid"
+  --external "@shopify/prettier-plugin-liquid" && rm -rf node_modules bun.lock
 */
