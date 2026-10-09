@@ -37,17 +37,46 @@ elif grep -qi amd /proc/cpuinfo; then
   AddPackage amd-ucode
 fi
 
-# gpu drivers
-# Check if any PCI device belongs to NVIDIA (Vendor ID: 0x10de)
-if grep -qi "0x10de" /sys/bus/pci/devices/*/vendor 2>/dev/null; then
-  AddPackage lib32-nvidia-utils
-  AddPackage nvidia-open-dkms
-  AddPackage nvidia-prime
-  AddPackage nvidia-utils
-elif lspci | grep -qiE 'vga|3d' | grep -qi amd; then
+# PCI GPU vendor detection
+intel_gpu=false
+amd_gpu=false
+nvidia_gpu=false
+
+for device in /sys/bus/pci/devices/*; do
+  [[ -r "$device/class" && -r "$device/vendor" ]] || continue
+
+  # Display controller classes: VGA, 3D, other display
+  case "$(cat "$device/class")" in
+  0x03*)
+    case "$(cat "$device/vendor")" in
+    0x8086) intel_gpu=true ;;
+    0x1002) amd_gpu=true ;;
+    0x10de) nvidia_gpu=true ;;
+    esac
+    ;;
+  esac
+done
+
+# Intel GPU: Vulkan
+if $intel_gpu; then
+  AddPackage vulkan-intel
+  AddPackage lib32-vulkan-intel
+  AddPackage lib32-vulkan-icd-loader
+fi
+
+# AMD GPU: Vulkan
+if $amd_gpu; then
   AddPackage vulkan-radeon
   AddPackage lib32-vulkan-radeon
-  AddPackage xf86-video-amdgpu
+  AddPackage lib32-vulkan-icd-loader
+fi
+
+# NVIDIA GPU
+if $nvidia_gpu; then
+  AddPackage nvidia-open-dkms
+  AddPackage nvidia-utils
+  AddPackage nvidia-prime
+  AddPackage lib32-nvidia-utils
 fi
 
 # ==========================================
@@ -79,6 +108,19 @@ AddPackage uwsm
 AddPackage greetd
 AddPackage noctalia
 AddPackage noctalia-greeter
+
+# ==========================================
+# FONTS & THEMING
+# ==========================================
+AddPackage --foreign bibata-cursor-theme-bin
+AddPackage papirus-icon-theme
+AddPackage terminus-font
+AddPackage noto-fonts
+AddPackage noto-fonts-cjk
+AddPackage noto-fonts-emoji
+AddPackage ttf-dejavu
+AddPackage ttf-liberation
+AddPackage ttf-jetbrains-mono-nerd
 
 # ==========================================
 # CLI & SYSTEM UTILITIES
@@ -119,24 +161,20 @@ AddPackage nautilus
 AddPackage obs-studio
 AddPackage vesktop-bin
 AddPackage zen-browser-bin
+AddPackage papers
+AddPackage localsend
 
 # ==========================================
-# FONTS & THEMING
+# GAMING & WINE
 # ==========================================
-AddPackage --foreign bibata-cursor-theme-bin
-AddPackage papirus-icon-theme
-AddPackage terminus-font
-AddPackage noto-fonts
-AddPackage noto-fonts-cjk
-AddPackage noto-fonts-emoji
-AddPackage ttf-dejavu
-AddPackage ttf-liberation
-AddPackage ttf-jetbrains-mono-nerd
+AddPackage gamemode
+AddPackage lib32-gamemode
+AddPackage gamescope
+AddPackage lutris
+AddPackage wine-staging
 
 # ==========================================
 # OTHER PACKAGES
 # ==========================================
 AddPackage --foreign freesmlauncher-bin
 AddPackage davinci-resolve
-AddPackage papers
-AddPackage localsend

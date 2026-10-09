@@ -60,7 +60,7 @@ widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-000000000000
     box_height = 224.0
     box_width = 512.0
     cx = 1280.0
-    cy = 240.0
+    cy = 264.0
     output = "eDP-1"
     placement_height = 1600.0
     placement_width = 2560.0
@@ -76,10 +76,10 @@ widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-000000000000
         shadow = false
 
     [desktop_widgets.widget.desktop-widget-0000000000000002]
-    box_height = 544.0
-    box_width = 2608.0
+    box_height = 488.0
+    box_width = 2560.0
     cx = 1280.0
-    cy = 1344.0
+    cy = 1364.0
     output = "eDP-1"
     placement_height = 1600.0
     placement_width = 2560.0
@@ -208,8 +208,8 @@ time_format = "{:%-I:%M %p}"
     show_shortcuts = false
 
 [theme]
-builtin = "Rosé Pine"
-community_palette = "Aura"
+builtin = "Ayu"
+community_palette = "Catppuccin Mocha Lavender"
 mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "m3-content"
@@ -224,22 +224,19 @@ edge_smoothness = 0.0
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/ziad/Pictures/wallpapers/wallhaven-216k99_2560x1600.png"
+    path = "/home/ziad/Pictures/wallpapers/wallhaven-xek51o_2560x1600.png"
 
     [wallpaper.last]
-    path = "/home/ziad/Pictures/wallpapers/wallhaven-216k99_2560x1600.png"
+    path = "/home/ziad/Pictures/wallpapers/wallhaven-xek51o_2560x1600.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/ziad/Pictures/wallpapers/wallhaven-216k99_2560x1600.png"
+    path = "/home/ziad/Pictures/wallpapers/wallhaven-xek51o_2560x1600.png"
 
     [[wallpaper.favorite]]
-    builtin_palette = "Rosé Pine"
-    palette_source = "builtin"
-    path = "/home/ziad/Pictures/wallpapers/wallhaven-3q6m6y_2560x1600.png"
-    theme_mode = "dark"
-
-    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
     path = "/home/ziad/Pictures/wallpapers/wallhaven-5yp7j8_2560x1600.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "m3-content"
 
     [[wallpaper.favorite]]
     palette_source = "wallpaper"
@@ -252,6 +249,12 @@ transition_on_startup = true
     path = "/home/ziad/Pictures/wallpapers/wallhaven-yqkqeg_2560x1600.png"
     theme_mode = "dark"
     wallpaper_scheme = "m3-content"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Lavender"
+    palette_source = "community"
+    path = "/home/ziad/Pictures/wallpapers/wallhaven-3q6m6y_2560x1600.png"
+    theme_mode = "dark"
 
 [widget.clock]
 anchor = true
