@@ -1,10 +1,11 @@
 [
   {
     "label": "Run C++ File (g++)",
-    "command": "g++ -std=c++20 \"$ZED_FILE\" -o \"$ZED_DIRNAME/$ZED_STEM\" && \"$ZED_DIRNAME/$ZED_STEM\"",
+    "command": "clear && g++ -std=c++20 \"$ZED_FILE\" -o \"$ZED_DIRNAME/$ZED_STEM\" && \"$ZED_DIRNAME/$ZED_STEM\"",
     "use_new_terminal": false,
-    "allow_concurrent_runs": false,
     "reveal": "always",
+    "show_summary": false,
+    "show_command": false,
     "save": "current"
   }
 ]
