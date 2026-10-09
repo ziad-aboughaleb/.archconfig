@@ -38,8 +38,8 @@ elif grep -qi amd /proc/cpuinfo; then
 fi
 
 # gpu drivers
-AddPackage pciutils # needed for lspci
-if lspci | grep -qiE 'vga|3d' | grep -qi nvidia; then
+# Check if any PCI device belongs to NVIDIA (Vendor ID: 0x10de)
+if grep -qi "0x10de" /sys/bus/pci/devices/*/vendor 2>/dev/null; then
   AddPackage lib32-nvidia-utils
   AddPackage nvidia-open-dkms
   AddPackage nvidia-prime
