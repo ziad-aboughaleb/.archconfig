@@ -1,0 +1,39 @@
+#!/bin/bash
+
+build() {
+    # 1. Create the color injection script inside the initramfs
+    mkdir -p "$BUILDROOT/usr/local/bin"
+    cat << 'EOF' > "$BUILDROOT/usr/local/bin/set-tty-colors.sh"
+#!/bin/sh
+COLORS="\033]P01e1e2e\033]P1f38ba8\033]P2a6e3a1\033]P3f9e2af\033]P489b4fa\033]P5f5c2e7\033]P694e2d5\033]P7bac2de\033]P8585b70\033]P9f38ba8\033]PAa6e3a1\033]PBf9e2af\033]PC89b4fa\033]PDf5c2e7\033]PE94e2d5\033]PFcdd6f4"
+for i in /dev/tty1 /dev/tty2 /dev/tty3 /dev/tty4 /dev/tty5 /dev/tty6; do
+    printf "%b" "$COLORS" > "$i" 2>/dev/null
+    printf "\033[c" > "$i" 2>/dev/null
+done
+EOF
+    chmod +x "$BUILDROOT/usr/local/bin/set-tty-colors.sh"
+
+    # 2. Create the systemd service inside the initramfs
+    mkdir -p "$BUILDROOT/usr/lib/systemd/system/initrd.target.wants"
+    cat << 'EOF' > "$BUILDROOT/usr/lib/systemd/system/tty-colors.service"
+[Unit]
+Description=Catppuccin TTY Colors Hook
+DefaultDependencies=no
+After=systemd-vconsole-setup.service
+Before=initrd-root-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/set-tty-colors.sh
+RemainAfterExit=yes
+EOF
+
+    # 3. Automatically enable the service for early boot
+    ln -s "../tty-colors.service" "$BUILDROOT/usr/lib/systemd/system/initrd.target.wants/tty-colors.service"
+}
+
+help() {
+    cat <<HELPEOF
+Dynamically generates and injects Catppuccin Mocha TTY colors into early boot.
+HELPEOF
+}

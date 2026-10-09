@@ -1,0 +1,9 @@
+[terminal]
+vt = 1
+
+[default_session]
+command = "/usr/bin/noctalia-greeter-session"
+user = "greeter"
+
+[command]
+command = "env XCURSOR_THEME=Bibata-Modern-Ice XCURSOR_SIZE=24 gtkgreet"
