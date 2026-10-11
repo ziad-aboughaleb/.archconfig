@@ -34,6 +34,14 @@ includes = ["*.toml"]
 command = "tex-fmt"
 includes = ["*.tex", "*.sty", "*.cls"]
 
+[formatter.clang-format]
+command = "clang-format"
+options = [
+  "-i",
+  "-style={BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 80, BreakBeforeBraces: Attach}",
+]
+includes = ["*.c", "*.cpp", "*.cc", "*.cxx", "*.h", "*.hpp", "*.hxx"]
+
 [formatter.prettier]
 command = "/home/ziad/.config/treefmt/prettier/my-prettier-tool"
 includes = [

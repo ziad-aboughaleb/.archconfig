@@ -126,15 +126,16 @@ AddPackage ttf-jetbrains-mono-nerd
 # CLI & SYSTEM UTILITIES
 # ==========================================
 AddPackage zram-generator
-AddPackage tlp
+AddPackage sbctl
 AddPackage sudo
 AddPackage paru
-AddPackage sbctl
+AddPackage tlp
+AddPackage --foreign wayscriber-bin
 AddPackage hyprpicker
 AddPackage fastfetch
 AddPackage btop
-AddPackage nano
 AddPackage stow
+AddPackage nano
 AddPackage zsh
 
 # ==========================================
@@ -149,6 +150,7 @@ AddPackage --foreign tex-fmt-bin
 AddPackage taplo-cli
 AddPackage stylua
 AddPackage shfmt
+AddPackage clang
 AddPackage jq
 AddPackage zed
 
