@@ -139,6 +139,7 @@ AddPackage stow
 AddPackage nano
 AddPackage zsh
 AddPackage docker
+AddPackage docker-buildx
 AddPackage docker-compose
 AddPackage ventoy-bin
 
