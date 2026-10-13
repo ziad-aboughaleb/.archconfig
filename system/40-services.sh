@@ -61,9 +61,3 @@ CreateLink /etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service /u
 # SNAPSHOTS & BACKUPS
 # ==========================================
 CreateLink /etc/systemd/system/timers.target.wants/snapper-cleanup.timer /usr/lib/systemd/system/snapper-cleanup.timer
-
-# ==========================================
-# DOWNLOAD MANAGER
-# ==========================================
-CopyFile /etc/systemd/user/aria2.service
-CreateLink /etc/systemd/user/default.target.wants/aria2.service /etc/systemd/user/aria2.service
