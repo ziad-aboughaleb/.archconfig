@@ -98,6 +98,7 @@ AddPackage pipewire-jack
 AddPackage pipewire
 AddPackage wireplumber
 AddPackage libpulse
+AddPackage pavucontrol
 
 # ==========================================
 # DESKTOP ENVIRONMENT (HYPRLAND & NOCTALIA)
@@ -137,6 +138,9 @@ AddPackage btop
 AddPackage stow
 AddPackage nano
 AddPackage zsh
+AddPackage docker
+AddPackage docker-compose
+AddPackage ventoy-bin
 
 # ==========================================
 # DEVELOPMENT TOOLS & FORMATTERS
@@ -163,8 +167,10 @@ AddPackage nautilus
 AddPackage obs-studio
 AddPackage vesktop-bin
 AddPackage zen-browser-bin
-AddPackage papers
 AddPackage localsend
+AddPackage papers
+AddPackage loupe
+AddPackage showtime
 
 # ==========================================
 # GAMING & WINE
@@ -174,6 +180,8 @@ AddPackage lib32-gamemode
 AddPackage gamescope
 AddPackage lutris
 AddPackage wine-staging
+AddPackage steam
+AddPackage protonup-qt
 
 # ==========================================
 # OTHER PACKAGES

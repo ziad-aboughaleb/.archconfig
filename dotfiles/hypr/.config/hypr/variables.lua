@@ -8,7 +8,7 @@ vars = {
 	windowRoundingPower = 10.0,
 
 	-- Opacity & Blur
-	activeOpacity = 0.95,
+	activeOpacity = 1,
 	inactiveOpacity = 0.8,
 	blurSize = 10,
 	blurPasses = 3,
