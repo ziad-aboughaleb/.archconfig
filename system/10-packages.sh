@@ -138,6 +138,7 @@ AddPackage btop
 AddPackage stow
 AddPackage nano
 AddPackage zsh
+AddPackage aria2
 AddPackage docker
 AddPackage docker-buildx
 AddPackage docker-compose

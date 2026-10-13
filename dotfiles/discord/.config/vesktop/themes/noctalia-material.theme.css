@@ -15,71 +15,76 @@
 /* Material You addon */
 @import url("https://capnkitten.github.io/BetterDiscord/Themes/Material-Discord/css/addons/material-you/source.css");
 
-
-
-
 /* MATERIAL YOU DARK THEME SETTINGS */
 .theme-dark {
-    --saturation-modifier: 0.31;
-    --lightness-modifier: 0.225;
-    --text-lightness-modifier: 1.0;
+  --saturation-modifier: 0.31;
+  --lightness-modifier: 0.225;
+  --text-lightness-modifier: 1;
 }
 
 /* MATERIAL YOU LIGHT THEME SETTINGS */
 .theme-light {
-    --saturation-modifier: 0.74;
-    --lightness-modifier: 2.125;
-    --text-lightness-modifier: 1.0;
+  --saturation-modifier: 0.74;
+  --lightness-modifier: 2.125;
+  --text-lightness-modifier: 1;
 }
 
-:root, .theme-dark, .theme-light {
+:root,
+.theme-dark,
+.theme-light {
   /* See options at https://github.com/CapnKitten/Material-Discord */
   /* Accent */
-  --accent-hue: 77;
-  --accent-saturation: 30%;
-  --accent-lightness: 58%;
-  --accent-text-color: #161311;
+  --accent-hue: 328;
+  --accent-saturation: 56%;
+  --accent-lightness: 77%;
+  --accent-text-color: #2b1422;
 
   /* App */
-  --app-bg: #161311;
-  --main-color: #161311;
-  --main-alt: #161311;
-  --server-color: #161311;
-  --status-picker-color: #26211e;
-  --sidebar-panel-color: #26211e;
-  --chat-color: #161311;
-  --tooltip-color: #161311;
-  --tooltip-text-color: #e6dfd3;
+  --app-bg: #10111b;
+  --main-color: #10111b;
+  --main-alt: #10111b;
+  --server-color: #10111b;
+  --status-picker-color: #1d1a2a;
+  --sidebar-panel-color: #1d1a2a;
+  --chat-color: #10111b;
+  --tooltip-color: #10111b;
+  --tooltip-text-color: #eee7f0;
 
   /* Message */
-  --message-color: #26211e;
+  --message-color: #1d1a2a;
   --message-color-hover: hsl(
     var(--accent-hue),
-    calc(var(--accent-saturation) * var(--saturation-modifier) * var(--saturation-factor)),
-    calc(var(--accent-lightness) * var(--lightness-modifier) * var(--ui-darkness-modifier) * 4)
+    calc(
+      var(--accent-saturation) * var(--saturation-modifier) *
+        var(--saturation-factor)
+    ),
+    calc(
+      var(--accent-lightness) * var(--lightness-modifier) *
+        var(--ui-darkness-modifier) * 4
+    )
   ) !important;
-  --message-color-alt: #161311;
-  --attachment-color: #161311;
-  --main-textarea-color: #a2b574;
-  --main-textarea-button-color: #161311;
-  --main-textarea-color-alt: #dfb26c;
-  --main-textarea-border: #26211e;
+  --message-color-alt: #1d1830;
+  --attachment-color: #2b1422;
+  --main-textarea-color: #e6a6c8;
+  --main-textarea-button-color: #2b1422;
+  --main-textarea-color-alt: #afa2d8;
+  --main-textarea-border: #1d1a2a;
 
   /* Card */
-  --card-color-filled: #26211e;
-  --card-color-hover: #7b9933;
-  --card-color-active: #7b9933;
-  --card-color-alt: #815817;
-  --card-color-alt-hover: #dfb26c;
-  --card-border-color: #26211e;
-  --card-header-text-color: #e6dfd3;
+  --card-color-filled: #1d1a2a;
+  --card-color-hover: #993369;
+  --card-color-active: #993369;
+  --card-color-alt: #4a3295;
+  --card-color-alt-hover: #afa2d8;
+  --card-border-color: #1d1a2a;
+  --card-header-text-color: #eee7f0;
 
   /* Slider & Switch */
-  --switch-knob-color: #26211e;
-  --switch-slider-color: #161311;
+  --switch-knob-color: #1d1a2a;
+  --switch-slider-color: #10111b;
 
   /* Input */
-  --input-text-color: #e6dfd3;
+  --input-text-color: #eee7f0;
 
   /* Misc */
   --app-watermark-one: "Noctalia";
@@ -87,8 +92,14 @@
 
   /* Ensure channels-default is different from the active one - works in dark mode / light mode is another story... */
   --text-tertiary: hsl(
-        var(--accent-hue),
-        calc(var(--accent-saturation) * var(--saturation-modifier) * 0.78 * var(--saturation-factor)),
-        calc(var(--accent-lightness) * var(--lightness-modifier) * var(--ui-darkness-modifier) * var(--text-lightness-modifier) * 3.0)
-    ) !important;
+    var(--accent-hue),
+    calc(
+      var(--accent-saturation) * var(--saturation-modifier) * 0.78 *
+        var(--saturation-factor)
+    ),
+    calc(
+      var(--accent-lightness) * var(--lightness-modifier) *
+        var(--ui-darkness-modifier) * var(--text-lightness-modifier) * 3
+    )
+  ) !important;
 }

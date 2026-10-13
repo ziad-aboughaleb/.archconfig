@@ -1,0 +1,10 @@
+[Unit]
+Description=Aria2 Background Download Manager
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/aria2c --enable-rpc --rpc-listen-all=false --rpc-secret=my_secret_token
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
