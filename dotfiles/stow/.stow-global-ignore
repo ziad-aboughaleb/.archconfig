@@ -1,0 +1,16 @@
+# Ignore a specific generated file (like theme.conf or colors.conf)
+theme\.conf
+colors\.conf
+
+# Ignore any file ending in a specific extension (e.g., .rendered)
+.*\.rendered$
+
+# Ignore anything with 'noctalia' in the filename (e.g., noctalia-theme.css)
+.*noctalia.*\.css
+.*/noctalia.*
+
+# Ignore an entire output directory if Noctalia writes to a dedicated folder
+noctalia-output/
+
+
+.*\.zcompdump.*

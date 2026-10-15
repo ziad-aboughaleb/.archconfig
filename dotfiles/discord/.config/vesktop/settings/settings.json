@@ -106,7 +106,8 @@
       "blurAmount": 10
     },
     "CallTimer": {
-      "enabled": true
+      "enabled": true,
+      "format": "stopwatch"
     },
     "CharacterCounter": {
       "enabled": false
@@ -556,7 +557,7 @@
       "enabled": false
     },
     "VolumeBooster": {
-      "enabled": false
+      "enabled": true
     },
     "WebKeybinds": {
       "enabled": true,
@@ -627,7 +628,7 @@
     "authenticated": false,
     "url": "https://api.vencord.dev/",
     "settingsSync": false,
-    "settingsSyncVersion": 1791578639536
+    "settingsSyncVersion": 1792010125646
   },
   "nativeTitleBar": false
 }

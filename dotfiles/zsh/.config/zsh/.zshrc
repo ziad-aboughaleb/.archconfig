@@ -66,14 +66,25 @@ stow() {
         return 1
     fi
 
-    if [[ "$1" == "all" ]]; then
+    local args=()
+    local run_all=false
+
+    for arg in "$@"; do
+        if [[ "$arg" == "all" ]]; then
+            run_all=true
+        else
+            args+=("$arg")
+        fi
+    done
+
+    if [[ "$run_all" == true ]]; then
         for d in "$dotfiles_dir"/*(N/); do
-            command stow --no-folding --dir="$dotfiles_dir" --target="$HOME" "${d:t}"
+            command stow --no-folding --dir="$dotfiles_dir" --target="$HOME" "${args[@]}" "${d:t}"
         done
         return
     fi
 
-    command stow --no-folding --dir="$dotfiles_dir" --target="$HOME" "$@"
+    command stow --no-folding --dir="$dotfiles_dir" --target="$HOME" "${args[@]}"
 }
 
 fmt() {
