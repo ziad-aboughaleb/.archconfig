@@ -3,15 +3,24 @@ ZSH_THEME="robbyrussell"
 
 if [ ! -d "$ZSH" ]; then
     echo "Oh My Zsh not found. Installing..."
-    # --unattended prevents the installer from dropping you into a new shell and pausing the script
     ZSH="$ZSH" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
-
-    echo "Installing custom plugins..."
-    git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH/custom/plugins/zsh-autosuggestions"
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH/custom/plugins/zsh-syntax-highlighting"
-    git clone https://github.com/zsh-users/zsh-history-substring-search "$ZSH/custom/plugins/zsh-history-substring-search"
-    echo "Installation complete. Reloading..."
 fi
+
+# Ensure custom plugins are installed individually
+[[ -d "$ZSH/custom/plugins/zsh-autosuggestions" ]] || {
+    echo "Installing zsh-autosuggestions..."
+    git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH/custom/plugins/zsh-autosuggestions"
+}
+
+[[ -d "$ZSH/custom/plugins/zsh-syntax-highlighting" ]] || {
+    echo "Installing zsh-syntax-highlighting..."
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH/custom/plugins/zsh-syntax-highlighting"
+}
+
+[[ -d "$ZSH/custom/plugins/zsh-history-substring-search" ]] || {
+    echo "Installing zsh-history-substring-search..."
+    git clone https://github.com/zsh-users/zsh-history-substring-search "$ZSH/custom/plugins/zsh-history-substring-search"
+}
 
 plugins=(
     git

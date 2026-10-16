@@ -1,6 +1,9 @@
 [security_migrations]
 calendar_credentials_v1 = true
 
+[template_store]
+sort = "category_asc"
+
 [theme_templates]
 applied_builtin_ids = "btop ghostty gtk3 gtk4 hyprland qt"
 

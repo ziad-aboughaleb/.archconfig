@@ -174,7 +174,7 @@ wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "hyprland", "qt" ]
-    community_ids = [ "zen-browser", "discord", "libreoffice", "zed", "prismlauncher", "obs", "papirus-icons" ]
+    community_ids = [ "zen-browser", "discord", "zed", "prismlauncher", "obs", "papirus-icons" ]
 
 [wallpaper]
 directory = "/home/ziad/Pictures/wallpapers"
@@ -209,10 +209,10 @@ transition_on_startup = true
     theme_mode = "dark"
 
     [[wallpaper.favorite]]
-    community_palette = "Everforest"
-    palette_source = "community"
+    palette_source = "wallpaper"
     path = "/home/ziad/Pictures/wallpapers/wallhaven-216k99_2560x1600.png"
     theme_mode = "dark"
+    wallpaper_scheme = "m3-content"
 
     [[wallpaper.favorite]]
     community_palette = "Mizuki-Akiyama"
