@@ -95,7 +95,14 @@ update_userjs() {
   mkdir -p backups
   [ -f user.js ] && cp user.js backups/user.js.backup
 
-  mv "$newfile" user.js
+  # Check if user.js is a symlink to prevent destroying it
+  if [ -L user.js ]; then
+    cat "$newfile" >user.js
+    rm "$newfile"
+  else
+    mv "$newfile" user.js
+  fi
+
   echo -e "${GREEN}Latest user.js downloaded and replaced.${NC}"
 
   # Append Overrides if exists (checks symlink or actual file)
@@ -120,16 +127,20 @@ clean_prefs() {
     return
   fi
 
-  while [ -e lock ] || [ -e .parentlock ]; do
-    echo -e "${RED}Browser seems to be running. Close it to clean prefs.js.${NC}"
-    read -r -p "Press Enter to try again..."
+  while [ -e lock ] || [ -L lock ] || [ -e .parentlock ]; do
+    echo -e "${RED}Browser lock file found. Ensure the browser is closed.${NC}"
+    read -r -p "Press Enter to try again, or type 'f' to force bypass: " bypass
+    if [[ "$bypass" == "f" || "$bypass" == "F" ]]; then
+      echo -e "${ORANGE}Forcing clean despite lock file...${NC}"
+      break
+    fi
   done
 
   mkdir -p backups
   cp prefs.js backups/prefs.js.backup
 
   local prefs="@@"
-  local prefexp="user_pref[ 	]*\([ 	]*[\"']([^\"']+)[\"'][ 	]*,"
+  local prefexp="user_pref[     ]*\([     ]*[\"']([^\"']+)[\"'][     ]*,"
 
   while read -r line; do
     if [[ "$line" =~ $prefexp && $prefs != *"@@${BASH_REMATCH[1]}@@"* ]]; then

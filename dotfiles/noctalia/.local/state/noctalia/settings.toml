@@ -6,6 +6,7 @@ enable_overdrive = true
 [bar.default]
 background_opacity = 0.89999997988343239
 capsule_radius = 8
+center = [ "clock", "clipboard" ]
 end = [ "tray", "bluetooth", "network", "volume", "brightness", "battery", "clipboard" ]
 font_family = "JetBrainsMono Nerd Font"
 icon_color = "primary"
