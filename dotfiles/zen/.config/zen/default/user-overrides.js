@@ -46,10 +46,3 @@ user_pref("media.peerconnection.ice.proxy_only_if_behind_proxy", false);
 // ==========================================
 user_pref("devtools.chrome.enabled", true);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-
-
-
-
-
-git config --global user.email "ziadaboughaleb@gmail.com"
-git config --global user.name "ziad-aboughaleb"
