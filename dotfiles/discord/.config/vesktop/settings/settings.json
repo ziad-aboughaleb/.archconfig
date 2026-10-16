@@ -25,13 +25,13 @@
             "enabled": true
         },
         "MemberListDecoratorsAPI": {
-            "enabled": false
+            "enabled": true
         },
         "MessageAccessoriesAPI": {
             "enabled": true
         },
         "MessageDecorationsAPI": {
-            "enabled": false
+            "enabled": true
         },
         "MessageEventsAPI": {
             "enabled": true
@@ -52,7 +52,7 @@
             "enabled": false
         },
         "AddAttachments": {
-            "enabled": false
+            "enabled": true
         },
         "AlwaysAnimate": {
             "enabled": false
@@ -393,7 +393,7 @@
             "enabled": false
         },
         "PlatformIndicators": {
-            "enabled": false
+            "enabled": true
         },
         "PreviewMessage": {
             "enabled": false
@@ -636,7 +636,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1792157611020
+        "settingsSyncVersion": 1792187667293
     },
     "nativeTitleBar": false
 }

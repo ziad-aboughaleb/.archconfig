@@ -1268,7 +1268,7 @@ user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!"
 // Zen Browser UI & Layout Overrides
 // ==========================================
 user_pref("zen.workspaces.continue-where-left-off", true);
-user_pref("zen.urlbar.behavior", "float"); // Note: matching your prefs.js "float" instead of "floating"
+user_pref("zen.urlbar.behavior", "float");
 user_pref("zen.welcome-screen.seen", true);
 user_pref("zen.view.layout", 2);
 user_pref("zen.view.use-single-toolbar", false);
@@ -1284,7 +1284,7 @@ user_pref("browser.uidensity", 0);
 // ==========================================
 // Session Restore & History Overrides
 // ==========================================
-user_pref("browser.startup.page", 3); // Restore previous session
+user_pref("browser.startup.page", 3);
 user_pref("browser.sessionstore.resume_from_crash", true);
 
 // Disable Arkenfox's strict shutdown clearing so history/logins stay
