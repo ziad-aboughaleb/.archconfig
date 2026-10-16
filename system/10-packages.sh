@@ -173,6 +173,9 @@ AddPackage localsend
 AddPackage papers
 AddPackage loupe
 AddPackage showtime
+AddPackage bleachbit
+AddPackage gnome-disk-utility
+AddPackage baobab
 
 # ==========================================
 # GAMING & WINE
