@@ -36,6 +36,7 @@ download_file() {
 get_profile_path() {
   # Common paths for Zen Browser and Firefox
   local ini_locations=(
+    "$HOME/.config/zen/profiles.ini"
     "$HOME/.zen/profiles.ini"
     "$HOME/Library/Application Support/zen/profiles.ini"
     "$HOME/.var/app/io.zen_browser.zen/.zen/profiles.ini"
@@ -99,12 +100,12 @@ update_userjs() {
 
   # Append Overrides if exists (checks symlink or actual file)
   if [ -f "user-overrides.js" ]; then
-    echo "" >> user.js
-    cat "user-overrides.js" >> user.js
+    echo "" >>user.js
+    cat "user-overrides.js" >>user.js
     echo -e "${GREEN}user-overrides.js appended.${NC}"
   elif [ -f "$CURRDIR/user-overrides.js" ]; then
-    echo "" >> user.js
-    cat "$CURRDIR/user-overrides.js" >> user.js
+    echo "" >>user.js
+    cat "$CURRDIR/user-overrides.js" >>user.js
     echo -e "${GREEN}user-overrides.js appended from $CURRDIR.${NC}"
   else
     echo -e "${ORANGE}No user-overrides.js found. Skipping overrides.${NC}"
@@ -142,12 +143,12 @@ clean_prefs() {
   while IFS='' read -r line || [[ -n "$line" ]]; do
     if [[ "$line" =~ ^$prefexp ]]; then
       if [[ $prefs != *"@@${BASH_REMATCH[1]}@@"* ]]; then
-        echo "$line" >> "$temp_prefs"
+        echo "$line" >>"$temp_prefs"
       fi
     else
-      echo "$line" >> "$temp_prefs"
+      echo "$line" >>"$temp_prefs"
     fi
-  done < prefs.js
+  done <prefs.js
 
   mv "$temp_prefs" prefs.js
   echo -e "${GREEN}prefs.js successfully cleaned!${NC}"
