@@ -115,6 +115,7 @@ AddPackage noctalia-greeter
 # ==========================================
 AddPackage --foreign bibata-cursor-theme-bin
 AddPackage papirus-icon-theme
+AddPackage adw-gtk-theme
 AddPackage terminus-font
 AddPackage noto-fonts
 AddPackage noto-fonts-cjk
@@ -131,7 +132,6 @@ AddPackage sbctl
 AddPackage sudo
 AddPackage paru
 AddPackage tlp
-AddPackage --foreign wayscriber-bin
 AddPackage hyprpicker
 AddPackage fastfetch
 AddPackage btop

@@ -17,7 +17,6 @@ hl.bind("SUPER + L", hl.dsp.exec_cmd(vars.powerMenu))
 hl.bind("PRINT", hl.dsp.exec_cmd(vars.screenshot))
 hl.bind("SUPER + PRINT", hl.dsp.exec_cmd(vars.windowScreenshot))
 hl.bind("SUPER + P", hl.dsp.exec_cmd(vars.colorPicker))
-hl.bind("SUPER + D", hl.dsp.exec_cmd(vars.scriber))
 
 -- Window Controls & Layout
 hl.bind("SUPER + Q", hl.dsp.window.close())

@@ -57,51 +57,51 @@
 @define-color theme_unfocused_selected_fg_color @accent_fg_color;
 
 :root {
-    --accent-color: #a7c080;
-    --accent-bg-color: #a7c080; 
-    --accent-fg-color: #232a2e;
+  --accent-color: #a7c080;
+  --accent-bg-color: #a7c080;
+  --accent-fg-color: #232a2e;
 
-    --destructive-bg-color: #e67e80;
-    --destructive-fg-color: #232a2e;
+  --destructive-bg-color: #e67e80;
+  --destructive-fg-color: #232a2e;
 
-    --error-bg-color: #e67e80;
-    --error-fg-color: #232a2e;
-    --error-color: #e67e80;
+  --error-bg-color: #e67e80;
+  --error-fg-color: #232a2e;
+  --error-color: #e67e80;
 
-    --window-bg-color: #232a2e;
-    --window-fg-color: #859289;
+  --window-bg-color: #232a2e;
+  --window-fg-color: #859289;
 
-    --view-bg-color: #232a2e;
-    --view-fg-color: #859289;
+  --view-bg-color: #232a2e;
+  --view-fg-color: #859289;
 
-    --headerbar-bg-color: #232a2e;
-    --headerbar-fg-color: #859289;
-    --headerbar-backdrop-color: @window_bg_color;
+  --headerbar-bg-color: #232a2e;
+  --headerbar-fg-color: #859289;
+  --headerbar-backdrop-color: @window_bg_color;
 
-    --popover-bg-color: #2d353b;
-    --popover-fg-color: #859289;
+  --popover-bg-color: #2d353b;
+  --popover-fg-color: #859289;
 
-    --card-bg-color: #2d353b;
-    --card-fg-color: #859289;
+  --card-bg-color: #2d353b;
+  --card-fg-color: #859289;
 
-    --dialog-bg-color: #232a2e;
-    --dialog-fg-color: #859289;
+  --dialog-bg-color: #232a2e;
+  --dialog-fg-color: #859289;
 
-    --overview-bg-color: #2d353b;
-    --overview-fg-color: #859289;
+  --overview-bg-color: #2d353b;
+  --overview-fg-color: #859289;
 
-    --sidebar-bg-color: #2d353b;
-    --sidebar-fg-color: #859289;
-    --sidebar-backdrop-color: @window_bg_color;
-    --sidebar-border-color: @window_bg_color;
+  --sidebar-bg-color: #2d353b;
+  --sidebar-fg-color: #859289;
+  --sidebar-backdrop-color: @window_bg_color;
+  --sidebar-border-color: @window_bg_color;
 
-    --warning-bg-color: #3b5942;
-    --warning-fg-color: #e4e7e5;
-    --warning-color: #9da9a0;
+  --warning-bg-color: #3b5942;
+  --warning-fg-color: #e4e7e5;
+  --warning-color: #9da9a0;
 
-    --success-color: #d3c6aa;
-    --success-bg-color: #90753b;
-    --success-fg-color: #0e0a04;
-    
-    --shade-color: rgba(0, 0, 0, 0.36);
+  --success-color: #d3c6aa;
+  --success-bg-color: #90753b;
+  --success-fg-color: #0e0a04;
+
+  --shade-color: rgba(0, 0, 0, 0.36);
 }

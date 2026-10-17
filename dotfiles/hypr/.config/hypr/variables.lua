@@ -21,7 +21,6 @@ vars = {
 	screenshot = "noctalia msg screenshot-region",
 	windowScreenshot = "noctalia msg screenshot-fullscreen",
 	colorPicker = "pkill hyprpicker || hyprpicker -a",
-	scriber = "wayscriber --daemon-toggle",
 
 	-- Noctalia provides built-in UI surfaces for these
 	shellSettings = "noctalia msg settings-open",
