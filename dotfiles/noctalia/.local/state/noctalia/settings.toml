@@ -1,4 +1,4 @@
-config_version = 14
+config_version = 15
 
 [audio]
 enable_overdrive = true
@@ -148,6 +148,7 @@ auto_sync = true
 
 [shell.launcher]
 categories = false
+layout = "simple"
 
 [shell.panel]
 borders = false
