@@ -28,7 +28,7 @@ CopyFile /etc/pacman.d/hooks/99-limine.hook
 # ==========================================
 # SECURITY, FIREWALL & PERMISSIONS
 # ==========================================
-CopyFile /etc/sudoers.d/00_ziad 440
+CopyFile /etc/sudoers.d/10-wheel 440
 CopyFile /etc/ufw/ufw.conf
 CopyFile /etc/ufw/user.rules
 CopyFile /etc/ufw/user6.rules
