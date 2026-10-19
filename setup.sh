@@ -7,7 +7,7 @@ export DOTFILES_DIR="${DOTFILES_DIR:-$ARCHCONFIG_DIR/dotfiles}"
 export ACONFMGR_CONFIG="${ACONFMGR_CONFIG:-$ARCHCONFIG_DIR/system}"
 
 echo "==> Installing base packages..."
-sudo pacman -Syu --needed git base-devel stow
+sudo pacman -Syu --needed git base-devel stow zsh
 
 # User Creation
 echo "==> User Setup"
