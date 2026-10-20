@@ -9,6 +9,24 @@ export ACONFMGR_CONFIG="${ACONFMGR_CONFIG:-$ARCHCONFIG_DIR/system}"
 echo "==> Installing base packages..."
 sudo pacman -Syu --needed git base-devel stow
 
+# User Creation
+echo "==> User Setup"
+read -r -p "Enter a username to create/configure (or leave blank to skip): " TARGET_USER
+
+if [[ -n "$TARGET_USER" ]]; then
+  if id "$TARGET_USER" &>/dev/null; then
+    echo "==> User '$TARGET_USER' already exists. Skipping creation."
+  else
+    echo "==> Creating user '$TARGET_USER'..."
+    # -m: create home dir | -G wheel: add to sudo group | -s /bin/zsh: default shell
+    sudo useradd -m -G wheel -s /bin/zsh "$TARGET_USER"
+
+    echo "==> Please set the password for '$TARGET_USER': "
+    sudo passwd "$TARGET_USER"
+    echo "✅ User '$TARGET_USER' created successfully."
+  fi
+fi
+
 # Install Paru
 if ! command -v paru &>/dev/null; then
   echo "==> Installing paru..."
@@ -27,24 +45,6 @@ paru -S --needed aconfmgr-git
 if [ -d "$ACONFMGR_CONFIG" ]; then
   echo "==> Applying aconfmgr setup..."
   aconfmgr -c "$ACONFMGR_CONFIG" apply
-fi
-
-# User Creation
-echo "==> User Setup"
-read -r -p "Enter a username to create/configure (or leave blank to skip): " TARGET_USER
-
-if [[ -n "$TARGET_USER" ]]; then
-  if id "$TARGET_USER" &>/dev/null; then
-    echo "==> User '$TARGET_USER' already exists. Skipping creation."
-  else
-    echo "==> Creating user '$TARGET_USER'..."
-    # -m: create home dir | -G wheel: add to sudo group | -s /bin/zsh: default shell
-    sudo useradd -m -G wheel -s /bin/zsh "$TARGET_USER"
-
-    echo "==> Please set the password for '$TARGET_USER': "
-    sudo passwd "$TARGET_USER"
-    echo "✅ User '$TARGET_USER' created successfully."
-  fi
 fi
 
 # Stow all dotfiles using --no-folding

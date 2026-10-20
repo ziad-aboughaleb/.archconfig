@@ -9,7 +9,7 @@
   },
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_size": 16,
-  "preferred_line_length": 120,
+  "preferred_line_length": 160,
   "show_wrap_guides": false,
   "soft_wrap": "bounded",
   "tab_size": 2,
@@ -51,6 +51,12 @@
     "default_height": 400
   },
   "agent": {
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "enable_thinking": true,
+      "effort": "minimal"
+    },
     "default_width": 400,
     "flexible": false,
     "dock": "right"
