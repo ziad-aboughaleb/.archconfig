@@ -169,7 +169,7 @@ time_format = "{:%-I:%M %p}"
 
 [theme]
 builtin = "Dracula"
-community_palette = "Everforest"
+community_palette = "Mizuki-Akiyama"
 mode = "dark"
 source = "community"
 wallpaper_scheme = "m3-content"
@@ -184,13 +184,13 @@ edge_smoothness = 0.0
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/ziad/Pictures/wallpapers/wallhaven-7jx17y_2560x1600.png"
+    path = "/home/ziad/Pictures/wallpapers/wallhaven-xek51o_2560x1600.png"
 
     [wallpaper.last]
-    path = "/home/ziad/Pictures/wallpapers/wallhaven-7jx17y_2560x1600.png"
+    path = "/home/ziad/Pictures/wallpapers/wallhaven-xek51o_2560x1600.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/ziad/Pictures/wallpapers/wallhaven-7jx17y_2560x1600.png"
+    path = "/home/ziad/Pictures/wallpapers/wallhaven-xek51o_2560x1600.png"
 
     [[wallpaper.favorite]]
     community_palette = "Mizuki-Akiyama"
@@ -199,27 +199,9 @@ transition_on_startup = true
     theme_mode = "dark"
 
     [[wallpaper.favorite]]
-    community_palette = "Cream"
-    palette_source = "community"
-    path = "/home/ziad/Pictures/wallpapers/wallhaven-1qod3w_2560x1600.png"
-    theme_mode = "dark"
-
-    [[wallpaper.favorite]]
     community_palette = "Everforest"
     palette_source = "community"
     path = "/home/ziad/Pictures/wallpapers/wallhaven-7jx17y_2560x1600.png"
-    theme_mode = "dark"
-
-    [[wallpaper.favorite]]
-    palette_source = "wallpaper"
-    path = "/home/ziad/Pictures/wallpapers/wallhaven-216k99_2560x1600.png"
-    theme_mode = "dark"
-    wallpaper_scheme = "m3-content"
-
-    [[wallpaper.favorite]]
-    community_palette = "Mizuki-Akiyama"
-    palette_source = "community"
-    path = "/home/ziad/Pictures/wallpapers/wallhaven-qrp91q_2560x1600.png"
     theme_mode = "dark"
 
 [widget.clock]
