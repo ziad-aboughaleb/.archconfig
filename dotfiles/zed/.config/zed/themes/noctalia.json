@@ -7,11 +7,7 @@
       "name": "Noctalia Dark",
       "appearance": "dark",
       "style": {
-        "accents": [
-          "#e6a6c8",
-          "#afa2d8",
-          "#7fb6d6"
-        ],
+        "accents": ["#e6a6c8", "#afa2d8", "#7fb6d6"],
         "background.appearance": "opaque",
         "border": "#4d465c",
         "border.variant": "#645d74",
@@ -301,11 +297,7 @@
       "name": "Noctalia Light",
       "appearance": "light",
       "style": {
-        "accents": [
-          "#b72f78",
-          "#6f4bbb",
-          "#006a90"
-        ],
+        "accents": ["#b72f78", "#6f4bbb", "#006a90"],
         "background.appearance": "opaque",
         "border": "#d6b9cb",
         "border.variant": "#a5899a",
@@ -595,11 +587,7 @@
       "name": "Noctalia Dark Transparent",
       "appearance": "dark",
       "style": {
-        "accents": [
-          "#e6a6c8",
-          "#afa2d8",
-          "#7fb6d6"
-        ],
+        "accents": ["#e6a6c8", "#afa2d8", "#7fb6d6"],
         "background.appearance": "transparent",
         "border": "#4d465c",
         "border.variant": "#645d74",
@@ -889,11 +877,7 @@
       "name": "Noctalia Light Transparent",
       "appearance": "light",
       "style": {
-        "accents": [
-          "#b72f78",
-          "#6f4bbb",
-          "#006a90"
-        ],
+        "accents": ["#b72f78", "#6f4bbb", "#006a90"],
         "background.appearance": "transparent",
         "border": "#d6b9cb",
         "border.variant": "#a5899a",
