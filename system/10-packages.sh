@@ -151,6 +151,7 @@ AddPackage --foreign aconfmgr-git
 AddPackage github-cli
 AddPackage git
 AddPackage bun
+AddPackage uv
 AddPackage --foreign treefmt
 AddPackage --foreign tex-fmt-bin
 AddPackage taplo-cli
