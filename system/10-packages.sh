@@ -87,6 +87,7 @@ AddPackage networkmanager
 AddPackage bluez-utils
 AddPackage bluez
 AddPackage ufw
+AddPackage gnome-keyring
 
 # ==========================================
 # AUDIO (PIPEWIRE)
@@ -177,6 +178,7 @@ AddPackage showtime
 AddPackage bleachbit
 AddPackage gnome-disk-utility
 AddPackage baobab
+AddPackage seahorse
 
 # ==========================================
 # GAMING & WINE
