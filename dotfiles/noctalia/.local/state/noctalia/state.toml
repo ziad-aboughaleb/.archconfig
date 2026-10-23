@@ -8,5 +8,5 @@ sort = "category_asc"
 applied_builtin_ids = "btop ghostty gtk3 gtk4 hyprland qt"
 
 [wallpaper_panel]
-flatten = true
+flatten = false
 sort = "date_desc"

@@ -624,6 +624,9 @@
     },
     "GifProviderSwitcher": {
       "enabled": false
+    },
+    "DirectFileDownload": {
+      "enabled": false
     }
   },
   "uiElements": {
@@ -640,7 +643,7 @@
     "authenticated": false,
     "url": "https://api.vencord.dev/",
     "settingsSync": false,
-    "settingsSyncVersion": 1792585387796
+    "settingsSyncVersion": 1792763374245
   },
   "nativeTitleBar": false
 }
