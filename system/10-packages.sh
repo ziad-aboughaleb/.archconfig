@@ -1,15 +1,15 @@
 # 10-packages.sh - System Packages
 
 # ==========================================
-# CORE SYSTEM & CACHYOS
+# CORE SYSTEM & KERNEL
 # ==========================================
 AddPackage base
 AddPackage base-devel
 AddPackage cachyos-keyring
 AddPackage cachyos-mirrorlist
+AddPackage cachyos-rate-mirrors
 AddPackage cachyos-v3-mirrorlist
 AddPackage cachyos-v4-mirrorlist
-AddPackage cachyos-rate-mirrors
 AddPackage linux-cachyos
 AddPackage linux-cachyos-headers
 AddPackage linux-firmware
@@ -17,7 +17,7 @@ AddPackage mkinitcpio
 AddPackage sof-firmware
 
 # ==========================================
-# BOOTLOADER & FILESYSTEM
+# BOOTLOADER, FILESYSTEM & SNAPSHOTS
 # ==========================================
 AddPackage btrfs-progs
 AddPackage dosfstools
@@ -30,22 +30,20 @@ AddPackage snapper
 # ==========================================
 # HARDWARE DRIVERS
 # ==========================================
-# cpu microcode
+# CPU Microcode
 if grep -qi intel /proc/cpuinfo; then
   AddPackage intel-ucode
 elif grep -qi amd /proc/cpuinfo; then
   AddPackage amd-ucode
 fi
 
-# PCI GPU vendor detection
+# PCI GPU Vendor Detection
 intel_gpu=false
 amd_gpu=false
 nvidia_gpu=false
 
 for device in /sys/bus/pci/devices/*; do
   [[ -r "$device/class" && -r "$device/vendor" ]] || continue
-
-  # Display controller classes: VGA, 3D, other display
   case "$(cat "$device/class")" in
   0x03*)
     case "$(cat "$device/vendor")" in
@@ -57,144 +55,148 @@ for device in /sys/bus/pci/devices/*; do
   esac
 done
 
-# Intel GPU: Vulkan
+# Intel GPU (Vulkan)
 if $intel_gpu; then
-  AddPackage vulkan-intel
-  AddPackage lib32-vulkan-intel
   AddPackage lib32-vulkan-icd-loader
+  AddPackage lib32-vulkan-intel
+  AddPackage vulkan-intel
 fi
 
-# AMD GPU: Vulkan
+# AMD GPU (Vulkan)
 if $amd_gpu; then
-  AddPackage vulkan-radeon
-  AddPackage lib32-vulkan-radeon
   AddPackage lib32-vulkan-icd-loader
+  AddPackage lib32-vulkan-radeon
+  AddPackage vulkan-radeon
 fi
 
 # NVIDIA GPU
 if $nvidia_gpu; then
-  AddPackage nvidia-open-dkms
-  AddPackage nvidia-utils
-  AddPackage nvidia-prime
   AddPackage lib32-nvidia-utils
+  AddPackage nvidia-open-dkms
+  AddPackage nvidia-prime
+  AddPackage nvidia-utils
 fi
 
 # ==========================================
-# NETWORKING, BLUETOOTH & SECURITY
+# NETWORKING & SECURITY
 # ==========================================
 AddPackage wpa_supplicant
 AddPackage networkmanager
 AddPackage bluez-utils
 AddPackage bluez
-AddPackage ufw
 AddPackage gnome-keyring
+AddPackage sbctl
+AddPackage sudo
+AddPackage ufw
 
 # ==========================================
 # AUDIO (PIPEWIRE)
 # ==========================================
 AddPackage gst-plugin-pipewire
-AddPackage pipewire-pulse
-AddPackage pipewire-alsa
-AddPackage pipewire-jack
-AddPackage pipewire
-AddPackage wireplumber
 AddPackage libpulse
 AddPackage pavucontrol
+AddPackage pipewire
+AddPackage pipewire-alsa
+AddPackage pipewire-jack
+AddPackage pipewire-pulse
+AddPackage wireplumber
 
 # ==========================================
-# DESKTOP ENVIRONMENT (HYPRLAND & NOCTALIA)
+# SYSTEM DAEMONS & CONFIG
+# ==========================================
+AddPackage --foreign aconfmgr-git
+AddPackage zram-generator
+AddPackage tlp
+
+# ==========================================
+# DESKTOP ENVIRONMENT (HYPRLAND)
 # ==========================================
 AddPackage xdg-desktop-portal-hyprland
 AddPackage hyprland
 AddPackage uwsm
-AddPackage greetd
 AddPackage noctalia
 AddPackage noctalia-greeter
+AddPackage greetd
 
 # ==========================================
-# FONTS & THEMING
+# ESSENTIAL APPS
+# ==========================================
+AddPackage ghostty
+AddPackage ghostty-nautilus
+AddPackage nautilus
+AddPackage paru
+AddPackage zsh
+
+# ==========================================
+# CLI UTILITIES
+# ==========================================
+AddPackage github-cli
+AddPackage git
+AddPackage bun
+AddPackage uv
+AddPackage hyprpicker
+AddPackage fastfetch
+AddPackage stow
+AddPackage btop
+AddPackage nano
+
+# ==========================================
+# THEMING & FONTS
 # ==========================================
 AddPackage --foreign bibata-cursor-theme-bin
 AddPackage papirus-icon-theme
 AddPackage adw-gtk-theme
-AddPackage terminus-font
 AddPackage noto-fonts
-AddPackage noto-fonts-cjk
 AddPackage noto-fonts-emoji
+AddPackage terminus-font
 AddPackage ttf-dejavu
-AddPackage ttf-liberation
 AddPackage ttf-jetbrains-mono-nerd
+AddPackage ttf-liberation
 
 # ==========================================
-# CLI & SYSTEM UTILITIES
+# FORMATTERS
 # ==========================================
-AddPackage zram-generator
-AddPackage sbctl
-AddPackage sudo
-AddPackage paru
-AddPackage tlp
-AddPackage hyprpicker
-AddPackage fastfetch
-AddPackage btop
-AddPackage stow
-AddPackage nano
-AddPackage zsh
-AddPackage aria2
-AddPackage docker
-AddPackage docker-buildx
-AddPackage docker-compose
-AddPackage ventoy-bin
-
-# ==========================================
-# DEVELOPMENT TOOLS & FORMATTERS
-# ==========================================
-AddPackage --foreign aconfmgr-git
-AddPackage github-cli
-AddPackage git
-AddPackage eza
-AddPackage bun
-AddPackage uv
 AddPackage --foreign treefmt
 AddPackage --foreign tex-fmt-bin
 AddPackage taplo-cli
 AddPackage stylua
 AddPackage shfmt
-AddPackage clang
 AddPackage jq
+
+# ==========================================
+# PERSONAL APPS
+# ==========================================
+AddPackage telegram-desktop
+AddPackage vesktop-bin
+AddPackage zen-browser-bin
 AddPackage zed
 
 # ==========================================
-# GUI APPLICATIONS
+# GUI UTILITY APPS
 # ==========================================
-AddPackage ghostty
-AddPackage ghostty-nautilus
-AddPackage nautilus
-AddPackage obs-studio
-AddPackage vesktop-bin
-AddPackage telegram-desktop
-AddPackage zen-browser-bin
+AddPackage gnome-disk-utility
+AddPackage bleachbit
 AddPackage localsend
+AddPackage seahorse
+AddPackage showtime
+AddPackage baobab
 AddPackage papers
 AddPackage loupe
-AddPackage showtime
-AddPackage bleachbit
-AddPackage gnome-disk-utility
-AddPackage baobab
-AddPackage seahorse
 
 # ==========================================
-# GAMING & WINE
+# GAMING
 # ==========================================
 AddPackage gamemode
-AddPackage lib32-gamemode
 AddPackage gamescope
-AddPackage lutris
+AddPackage lib32-gamemode
 AddPackage wine-staging
-AddPackage steam
 AddPackage protonup-qt
+AddPackage lutris
+AddPackage steam
 
 # ==========================================
 # OTHER PACKAGES
 # ==========================================
 AddPackage --foreign freesmlauncher-bin
 AddPackage davinci-resolve
+AddPackage obs-studio

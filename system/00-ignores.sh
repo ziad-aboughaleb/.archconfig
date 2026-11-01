@@ -6,8 +6,8 @@
 # Backups, caches, logs, and snapshots
 IgnorePath '*.pacsave'
 IgnorePath '*.pacnew'
-IgnorePath '*.bak'
 IgnorePath '*.old'
+IgnorePath '*.bak'
 IgnorePath '*.log'
 IgnorePath '*history*'
 IgnorePath '*cache*'
@@ -43,7 +43,6 @@ IgnorePath '/etc/os-release'
 IgnorePath '/etc/resolv.conf'
 IgnorePath '/etc/machine-id'
 IgnorePath '/etc/locale.gen'
-IgnorePath '/etc/vconsole.conf'
 IgnorePath '/etc/conf.d/snapper'
 
 # ==========================================

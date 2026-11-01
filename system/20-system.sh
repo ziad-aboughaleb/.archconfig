@@ -23,7 +23,7 @@ CopyFile /etc/modprobe.d/nvidia.conf
 # PACKAGE MANAGER (PACMAN)
 # ==========================================
 CopyFile /etc/pacman.conf
-CopyFile /etc/pacman.d/hooks/99-limine.hook
+CopyFile /etc/pacman.d/hooks/10-limine.hook
 
 # ==========================================
 # SECURITY, FIREWALL & PERMISSIONS
