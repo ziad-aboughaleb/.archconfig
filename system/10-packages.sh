@@ -151,6 +151,7 @@ AddPackage ventoy-bin
 AddPackage --foreign aconfmgr-git
 AddPackage github-cli
 AddPackage git
+AddPackage eza
 AddPackage bun
 AddPackage uv
 AddPackage --foreign treefmt
@@ -170,6 +171,7 @@ AddPackage ghostty-nautilus
 AddPackage nautilus
 AddPackage obs-studio
 AddPackage vesktop-bin
+AddPackage telegram-desktop
 AddPackage zen-browser-bin
 AddPackage localsend
 AddPackage papers

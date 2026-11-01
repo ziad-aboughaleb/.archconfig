@@ -2,7 +2,6 @@
 // Zen Browser UI & Layout Overrides
 // ==========================================
 user_pref("zen.workspaces.continue-where-left-off", true);
-user_pref("zen.urlbar.behavior", "float");
 user_pref("zen.welcome-screen.seen", true);
 user_pref("zen.view.layout", 2);
 user_pref("zen.view.use-single-toolbar", false);

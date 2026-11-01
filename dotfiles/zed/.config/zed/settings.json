@@ -97,6 +97,9 @@
       ]
     }
   },
+  "edit_predictions": {
+    "provider": "copilot"
+  },
   "lsp_document_colors": "inlay",
   "cli_default_open_behavior": "existing_window",
   "load_direnv": "direct",

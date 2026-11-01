@@ -21,3 +21,6 @@ export BUN_INSTALL="$HOME/.local/share/bun"
 export PATH="$BUN_INSTALL/install/global/node_modules/.bin:$BUN_INSTALL/bin:$PATH"
 export npm_config_userconfig="$XDG_CONFIG_HOME/npm/npmrc"
 export npm_config_cache="$XDG_CACHE_HOME/npm"
+
+# uv
+export PATH="/home/ziad/.local/share/../bin:$PATH"
