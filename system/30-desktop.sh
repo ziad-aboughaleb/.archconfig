@@ -1,11 +1,11 @@
 # 30-desktop.sh - Desktop & Login Manager configs
 
 # ==========================================
-# DISPLAY MANAGER & LOGIN (GREETD)
+# DISPLAY MANAGER & LOGIN
 # ==========================================
-CopyFile /etc/greetd/config.toml
-CopyFile /etc/pam.d/greetd
-CopyFile /etc/polkit-1/rules.d/49-noctalia-greeter-passwordless-sync.rules
+CopyFile /etc/sddm.conf
+CopyFile /etc/pam.d/sddm
+CopyDir /usr/share/sddm/themes
 
 # ==========================================
 # THEMING & ENVIRONMENT (WAYLAND / X11)

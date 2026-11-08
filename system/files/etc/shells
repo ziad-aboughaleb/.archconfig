@@ -9,3 +9,4 @@
 /usr/bin/zsh
 /bin/zsh
 /usr/bin/git-shell
+/usr/bin/systemd-home-fallback-shell

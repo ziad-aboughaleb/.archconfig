@@ -6,6 +6,7 @@ sort = "category_asc"
 
 [theme_templates]
 applied_builtin_ids = "btop ghostty gtk3 gtk4 hyprland qt"
+applied_community_ids = "discord obs papirus-icons prismlauncher zed zen-browser"
 
 [wallpaper_panel]
 flatten = true

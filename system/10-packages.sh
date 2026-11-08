@@ -115,8 +115,7 @@ AddPackage xdg-desktop-portal-hyprland
 AddPackage hyprland
 AddPackage uwsm
 AddPackage noctalia
-AddPackage noctalia-greeter
-AddPackage greetd
+AddPackage sddm
 
 # ==========================================
 # ESSENTIAL APPS
@@ -167,7 +166,7 @@ AddPackage jq
 # PERSONAL APPS
 # ==========================================
 AddPackage telegram-desktop
-AddPackage vesktop-bin
+AddPackage discord
 AddPackage zen-browser-bin
 AddPackage zed
 
