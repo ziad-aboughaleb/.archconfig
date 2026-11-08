@@ -15,7 +15,7 @@ CreateLink /etc/systemd/system/getty.target.wants/getty@tty4.service /usr/lib/sy
 # ==========================================
 # DISPLAY MANAGER & LOGIN
 # ==========================================
-CreateLink /etc/systemd/system/display-manager.service /usr/lib/systemd/system/greetd.service
+CreateLink /etc/systemd/system/display-manager.service /usr/lib/systemd/system/sddm.service
 
 # ==========================================
 # NETWORKING & MIRRORS
