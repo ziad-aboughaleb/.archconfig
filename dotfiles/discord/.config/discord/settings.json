@@ -4,7 +4,10 @@
   "arRPC": true,
   "splashColor": "rgb(176, 179, 181)",
   "splashBackground": "rgb(28, 30, 33)",
-  "spellCheckLanguages": ["en-US", "en"],
+  "spellCheckLanguages": [
+    "en-US",
+    "en"
+  ],
   "hardwareVideoAcceleration": true,
   "customTitleBar": false,
   "clickTrayToShowHide": true,

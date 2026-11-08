@@ -15,6 +15,13 @@ user_pref("browser.theme.dark-private-windows", false);
 user_pref("browser.uidensity", 0);
 
 // ==========================================
+// Downloads Overrides
+// ==========================================
+user_pref("browser.download.always_ask_before_handling_new_types", false);
+user_pref("browser.download.useDownloadDir", true);
+user_pref("browser.download.folderList", 1);
+
+// ==========================================
 // Session Restore & History Overrides
 // ==========================================
 user_pref("browser.startup.page", 3);
