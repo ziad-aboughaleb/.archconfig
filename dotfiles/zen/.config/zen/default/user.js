@@ -1323,8 +1323,6 @@ user_pref("media.peerconnection.ice.proxy_only_if_behind_proxy", false);
 // ==========================================
 // Developer Tools & Stylesheets
 // ==========================================
-user_pref("devtools.chrome.enabled", true);
-user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // ==========================================
 // Address Bar Enhancements
@@ -1345,3 +1343,5 @@ user_pref("layout.spellcheckDefault", 2);
 // ==========================================
 user_pref("media.ffmpeg.vaapi.enabled", true);
 user_pref("network.http.max-persistent-connections-per-server", 10);
+user_pref("devtools.chrome.enabled", true);
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);

@@ -116,6 +116,7 @@ AddPackage hyprland
 AddPackage uwsm
 AddPackage noctalia
 AddPackage sddm
+AddPackage qt6-5compat
 
 # ==========================================
 # ESSENTIAL APPS

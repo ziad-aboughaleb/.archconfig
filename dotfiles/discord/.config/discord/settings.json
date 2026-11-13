@@ -38,6 +38,8 @@
     "quickstart": true
   },
   "DESKTOP_TTI_HTTP_CDT": true,
+  "chromiumSwitches": {},
   "DESKTOP_PERF_KEEP_RENDERER_LOG_FILE_OPEN": true,
-  "chromiumSwitches": {}
+  "IS_MAXIMIZED": true,
+  "IS_MINIMIZED": false
 }
