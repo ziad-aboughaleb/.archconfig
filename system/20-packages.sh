@@ -161,6 +161,7 @@ AddPackage --foreign tex-fmt-bin
 AddPackage taplo-cli
 AddPackage stylua
 AddPackage shfmt
+AddPackage ruff
 AddPackage jq
 
 # ==========================================
@@ -198,5 +199,4 @@ AddPackage steam
 # OTHER PACKAGES
 # ==========================================
 AddPackage --foreign freesmlauncher-bin
-AddPackage davinci-resolve
 AddPackage obs-studio
