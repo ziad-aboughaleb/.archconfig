@@ -166,10 +166,10 @@ time_format = "{:%-I:%M %p}"
 
 [theme]
 builtin = "Gruvbox"
-community_palette = "Monochrome"
+community_palette = "ADW"
 mode = "dark"
-source = "wallpaper"
-wallpaper_scheme = "m3-content"
+source = "builtin"
+wallpaper_scheme = "muted"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "hyprland", "qt" ]
@@ -202,20 +202,20 @@ transition_on_startup = true
     wallpaper_scheme = "m3-content"
 
     [[wallpaper.favorite]]
-    community_palette = "Peche"
-    palette_source = "community"
-    path = "/home/ziad/Pictures/wallpapers/wallhaven-1qkzkv_2560x1600.png"
-    theme_mode = "dark"
-
-    [[wallpaper.favorite]]
     palette_source = "wallpaper"
     path = "/home/ziad/Pictures/wallpapers/wallhaven-zpvdzv_2560x1600.png"
     theme_mode = "dark"
     wallpaper_scheme = "muted"
 
     [[wallpaper.favorite]]
-    palette_source = "wallpaper"
+    builtin_palette = "Gruvbox"
+    palette_source = "builtin"
     path = "/home/ziad/Pictures/wallpapers/wallhaven-d8vvlo_2560x1600.png"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/ziad/Pictures/wallpapers/wallhaven-3q6m6y_2560x1600.png"
     theme_mode = "dark"
     wallpaper_scheme = "m3-content"
 

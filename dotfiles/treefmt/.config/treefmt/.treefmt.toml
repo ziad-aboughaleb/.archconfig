@@ -34,6 +34,33 @@ includes = ["*.toml"]
 command = "tex-fmt"
 includes = ["*.tex", "*.sty", "*.cls"]
 
+[formatter.ruff-check]
+command = "ruff"
+options = [
+  "check",
+  "--fix",
+  "--config", "line-length=240",
+  "--config", "lint.select=['E', 'W', 'F', 'I', 'B', 'C4', 'UP', 'SIM', 'RUF']",
+  "--config", "lint.ignore=['RUF012']",
+  "--config", "lint.fixable=['ALL']",
+]
+includes = ["*.py", "*.pyi"]
+priority = 1
+
+[formatter.ruff-format]
+command = "ruff"
+options = [
+  "format",
+  "--config", "line-length=240",
+  "--config", "indent-width=2",
+  "--config", "format.quote-style='double'",
+  "--config", "format.indent-style='space'",
+  "--config", "format.skip-magic-trailing-comma=false",
+  "--config", "format.line-ending='auto'",
+]
+includes = ["*.py", "*.pyi"]
+priority = 2
+
 [formatter.prettier]
 command = "/home/ziad/.config/treefmt/prettier/my-prettier-tool"
 includes = [
